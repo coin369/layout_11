@@ -1042,19 +1042,6 @@ img {
     text-decoration: none
 }
 
-#mainBanner a img,
-#youtubeWrap ul li a img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: all .4s ease;
-}
-
-#mainBanner a img:hover,
-#youtubeWrap ul li a img:hover {
-    transform: scale(1.1);
-}
-
 #mainBanner ul li h3 {
     color: #333;
     font-size: 22px;
@@ -1249,31 +1236,7 @@ img {
     box-sizing: border-box;
 }
 
-.main-article .pageTitleIn h2 {
-    width: 760px;
-    margin: 0 auto;
-    position: relative;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    font-weight: 600;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 25px 0 15px;
-    box-sizing: border-box;
-}
-
 #pageTitleIn h2 span {
-    color: #f51018;
-    font-weight: 700;
-    display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 36px;
-    letter-spacing: 1px;
-}
-
-.main-article .pageTitleIn h2 span {
     color: #f51018;
     font-weight: 700;
     display: block;
@@ -1338,14 +1301,6 @@ img {
     position: absolute;
     left: 0;
     right: 0
-}
-
-.main-article .message h2 {
-    text-align: center;
-}
-
-.pageTitle {
-    text-align: center;
 }
 
 #message p {
@@ -1454,11 +1409,6 @@ img {
     margin-top: 5px;
 }
 
-.h3_tit01 a {
-    color: #333;
-    text-decoration: none;
-}
-
 .h3_tit01:after {
     content: '';
     width: 6px;
@@ -1544,8 +1494,7 @@ img {
     font-size: 22px;
     color: #f51018;
     padding: 20px 20px;
-    border: 1px solid #e49393;
-    border-radius: 5px;
+    border: 1px solid #ccc;
     text-decoration: none;
     font-weight: 500;
 }
@@ -1798,74 +1747,4 @@ img {
 #contactWrap {
     position: relative;
     margin-top: 105px;
-}
-
-.info_page {
-    display: flex;
-}
-
-.main-article {
-    margin: 0 auto;
-}
-
-#headerLogo a img.off {
-    max-width: 403px;
-}
-
-#headerLogo a img.on {
-    max-width: 266px;
-}
-
-#bnrCommon {
-    margin-left: 20px;
-}
-
-#bnrCommon li span {
-    color: #fff;
-    font-size: 80%;
-    padding: 5px 8px;
-    margin-left: 12px;
-    background-color: #F51F16;
-    white-space: nowrap;
-    font-weight: normal;
-    float: right;
-}
-
-#bnrCommon li {
-    font-size: 17px;
-}
-
-#accessContent a img {
-    max-width: 200px;
-}
-
-.partners_b {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-}
-
-.partners_b a {
-    display: block;
-}
-
-.partners_b a:last-child {
-    margin-right: 0px;
-}
-
-.partners_b a img {
-    max-width: 85%;
-}
-
-#contactBtn a {
-    max-width: 238px;
-    display: inline-block;
-}
-
-#accessContent {
-    width: 80%;
-}
-
-.partners_b a:first-child {
-    margin-right: 12px;
 }
