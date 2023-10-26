@@ -1,0 +1,21 @@
+@if($is_side=='product')
+        @include("admin.main.side.product")
+@endif
+@if($is_side=='order')
+        @include("admin.main.side.order")
+@endif
+@if($is_side=='promotion')
+        @include("admin.main.side.promotion")
+@endif
+@if($is_side=='filter')
+        @include("admin.main.side.filter")
+@endif
+@if($is_side=='general')
+        @include("admin.main.side.general")
+@endif
+@if($is_side=='news')
+        @include("admin.main.side.news")
+@endif
+@if($is_side=='info')
+        @include("admin.main.side.info")
+@endif

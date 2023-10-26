@@ -1,0 +1,39 @@
+@media only screen and (max-width: 768px) {
+  #message, #mainBanner, .pageTitleIn h2{
+  	width: 100%;
+  }
+  #message figure{
+  	position: static;
+    text-align: center;
+  }
+  #wrapper > section{
+  	padding: 5px;
+  }
+  #message p{
+  	width: 100%;
+  }
+  #mainBanner ul{
+  	display: block;
+  }
+  #mainBanner ul li{
+  	width: 100%;
+  }
+  .pageTitleIn h2
+  {
+  	margin-bottom: 0px !important;
+    padding-bottom: 0px;
+  }
+  #mainBanner li:nth-child(1), #mainBanner li:nth-child(2){
+  	text-align: center;
+  }
+  #toggle {
+      display: block;
+  }
+  #gNavi{
+    width: 100%;
+  }
+  #gNavi li {
+    width: 100%;
+    display: block;
+  }
+}
