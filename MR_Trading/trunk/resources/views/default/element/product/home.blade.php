@@ -3,7 +3,7 @@
                         <div class="single-service-style1">
                             <a href="{{route('detail',['alias'=>$product['alias']] )}}" title="{{$product['name']}}">
                                     <div class="img-holder-1">
-                                        <img class="lazy" src="{{asset_cdn('public/upload/product/big/'.$product['picture'])}}" title="{{$product['name']}}"  alt="{{$product['name']}}"/>
+                                        <img class="lazy" src="{{asset(PUBLIC_URL.'upload/product/big/'.$product['picture'])}}" title="{{$product['name']}}"  alt="{{$product['name']}}"/>
 
                                        
                                     </div>

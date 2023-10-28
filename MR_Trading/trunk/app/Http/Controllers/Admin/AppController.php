@@ -13,7 +13,7 @@ use Validator;
 use Image;
 use Cache;
 
-use App\Model\Seo as DTSeo;
+use App\Models\Seo as DTSeo;
 
 class AppController extends Controller
 {   

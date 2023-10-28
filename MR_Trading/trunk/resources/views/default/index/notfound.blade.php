@@ -20,7 +20,7 @@
                                 </p>
                             </div>
                             <div class="button">
-                                <a class="btn-one" title="thiết kế nội thất " href="MY_DOMAIN/landing-page/thiet-ke-noi-that">Xem thêm<span class="flaticon-next"></span></a>
+                                <a class="btn-one" title="thiết kế nội thất " href="/landing-page/thiet-ke-noi-that">Xem thêm<span class="flaticon-next"></span></a>
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                                                     );
                                             }
                                         ?>  
-                                <img class="lazy" data-src="{{asset_cdn('/assets/images/info1.jpg.webp')}}" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw=="  alt="{{$TGeneral['name']}}">
+                                <img class="lazy" data-src="{{asset('/assets/images/info1.jpg.webp')}}" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw=="  alt="{{$TGeneral['name']}}">
                                 <div class="overlay-box">
                                     <div class="title">
                                         <div class="row">

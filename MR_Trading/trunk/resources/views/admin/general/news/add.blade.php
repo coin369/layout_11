@@ -221,8 +221,8 @@
           //  document.getElementById('galaxy_name').addEventListener('change', handleFileSelectMulti, false);
         </script>
 
-         <script type="text/javascript" src="{{asset_cdn('public/admin/bower_components/jquery-tag/src/jquery.tagsinput.js')}}"></script>
-        <link rel="stylesheet" type="text/css" href="{{asset_cdn('public/admin/bower_components/jquery-tag/src/jquery.tagsinput.css')}}">
+         <script type="text/javascript" src="{{asset(PUBLIC_URL.'admin/bower_components/jquery-tag/src/jquery.tagsinput.js')}}"></script>
+        <link rel="stylesheet" type="text/css" href="{{asset(PUBLIC_URL.'admin/bower_components/jquery-tag/src/jquery.tagsinput.css')}}">
         <script type="text/javascript">
             $("#tag").tagsInput({width:'auto'});
         </script>

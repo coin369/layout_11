@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Defaults;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Model\News as DTNews;
-use App\Model\News_Cate as DTNewsCate;
-use App\Model\Youtube as DTYoutube;
-use App\Model\Tag as DTTag;
+use App\Models\News as DTNews;
+use App\Models\News_Cate as DTNewsCate;
+use App\Models\Youtube as DTYoutube;
+use App\Models\Tag as DTTag;
 use Cache;
 //use Share;
 use URL;

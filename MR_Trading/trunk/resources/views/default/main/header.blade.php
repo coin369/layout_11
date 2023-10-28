@@ -4,18 +4,18 @@
                 <div id="headerTop">
                     <h1 id="headerLogo">
                         <a href="{{route('home')}}" title="#">
-                            <img src="../assets/img/logo1.png" alt="mr group" class="off">
-                            <img src="../assets/img/logo1.jpg" alt="mr group" class="on">
+                            <img src="/upload/banner/logo1.png" alt="mr group" class="off">
+                            <img src="/upload/banner/logo1.jpg" alt="mr group" class="on">
                         </a>
                     </h1>
                     <div id="headerList">
                         <div id="headerTel">
-                            <img src="../assets/img/tel_header_sub2.png" alt="0473-69-7071" class="is-top is-hotline"><strong>0473-69-7071</strong>
+                            <img src="/upload/banner/tel_header_sub2.png" alt="0473-69-7071" class="is-top is-hotline"><strong>0473-69-7071</strong>
                             <img src="../assets/img/tel_header_sub2.png" alt="0473-69-7071" class="is-sub">
                             <span>受付時間：平日9:00～18:00</span>
                         </div>
                         <div id="headerContact">
-                            <a href="contact.html" title="#" class="imgHover07"><img src="../assets/img/btn_contact_header1.png" alt="採用エントリー・お問い合わせ"></a>
+                            <a href="contact.html" title="#" class="imgHover07"><img src="/upload/banner/btn_contact_header1.png" alt="採用エントリー・お問い合わせ"></a>
                         </div>
                         <!-- /headerList -->
                     </div>

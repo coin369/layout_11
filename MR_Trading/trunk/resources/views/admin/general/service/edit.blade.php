@@ -63,7 +63,7 @@
                                                       <span style="color:red">*</span>
                                                 <div class="detail_banner">
                                                     
-                                                    <img class='img-thumbnail' src='/public/upload/service/small/{{$data["picture"]}}'  class="img-thumbnail" />
+                                                    <img class='img-thumbnail' src='/<?=PUBLIC_URL?>upload/service/small/{{$data["picture"]}}'  class="img-thumbnail" />
                                                 </div>
                                                         </div>
                                                        
@@ -80,7 +80,7 @@
 <span style="color:red">*</span>
 <div class="detail_banner"></div>
 
-<img class='img-thumbnail' src='/public/upload/service/icon_{{$data["id"]}}.png'  class="img-thumbnail" />
+<img class='img-thumbnail' src='/<?=PUBLIC_URL?>upload/service/icon_{{$data["id"]}}.png'  class="img-thumbnail" />
 </div>
 
 

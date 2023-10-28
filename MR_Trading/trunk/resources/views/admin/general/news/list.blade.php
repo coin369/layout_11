@@ -51,7 +51,7 @@
                                                      <a href='/tin-tuc/{{$list["alias"]}}' target='_black'>
                                                         <?php echo $list['name'];?>
                                                     </a><br />
-                                                     <img class='img-thumbnail' src='{{asset_cdn("/public/upload/news/small/".$list["picture"])}}'/>
+                                                     <img class='img-thumbnail' src='{{asset("/<?=PUBLIC_URL?>upload/news/small/".$list["picture"])}}'/>
                                                             
 
                                                         </td>

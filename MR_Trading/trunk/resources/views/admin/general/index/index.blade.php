@@ -32,40 +32,12 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
+                                            
+                                           
                                             <div class="col-sm-10">
 
                                                 <div class="form-group">
-                                                    <label for="name">LOGO</label>
-        {!! Form::file('logo',['class'=>'form-control','accept'=>"image/*",'class'=>'main_picture'])!!}
-                                              
-                                                  <div class="view_picture">
-                                                     <img src='{{asset_cdn('public/upload/banner/logo.png')}}?={{time()}}' />
-                                                  </div>
-
-                                                </div>
-
-                                            </div>
-                                            <div class="col-sm-10">
-
-                                                <div class="form-group">
-                                                    <label for="name">Tên SITE </label>
-        {!! Form::text('sitename',@$data['sitename'],['class'=>'form-control'])!!}
-                                                  
-                                                     
-                                                    @if($errors->has("sitename"))
-                                                      <p class="text-danger">
-                                                        {{$errors->first('sitename')}}
-                                                      </p>
-                                                    @else
-                                                        <span  class="text-inline text-danger">*</span>
-                                                    @endif
-                                                </div>
-
-                                            </div>
-                                            <div class="col-sm-10">
-
-                                                <div class="form-group">
-                                                    <label for="name">Tên  </label>
+                                                    <label for="name"> Name  </label>
          {!! Form::text('name',@$data['name'],['class'=>'form-control'])!!}
                                                    @if($errors->has("name"))
                                                       <p class="text-danger">
@@ -80,7 +52,7 @@
                                             <div class="col-sm-10">
 
                                                 <div class="form-group">
-                                                    <label for="name"> Mô tả </label>
+                                                    <label for="name"> Description </label>
         {!! Form::textarea('description',@$data['description'],['class'=>'form-control'])!!}
                                               
                                                   @if($errors->has("description"))
@@ -97,103 +69,7 @@
 
 
 
-                                            <div class="col-sm-10">
-
-                                           <div class="form-group">
-                                                    <label for="name"> Email  </label>
-        {!! Form::text('email',@$data['email'],['class'=>'form-control'])!!}
-                                                   
-                                                     @if($errors->has("email"))
-                                                      <p class="text-danger">
-                                                        {{$errors->first('email')}}
-                                                      </p>
-                                                    @else
-                                                        <span  class="text-danger">*</span>
-                                                    @endif
-                                                   
-                                                </div>
-
-                                            </div>
-                                            <div class="col-sm-10">
-
-                                                <div class="form-group">
-
-                                                    <label for="name"> Số điện thoại </label>
-        {!! Form::text('phone',@$data['phone'],['class'=>'form-control'])!!}
                                                 
-                                                    @if($errors->has("phone"))
-                                                      <p class="text-danger">
-                                                        {{$errors->first('phone')}}
-                                                      </p>
-                                                    @else
-                                                        <span  class="text-danger">*</span>
-                                                    @endif
-                                                   
-                                                </div>
-
-                                            </div>
-
-
-
-                                           
-                                            <div class="col-sm-10">
-
-                                                <div class="form-group">
-                                                    <label for="name"> Địa chỉ  </label>
-        {!! Form::text('address',@$data['address'],['class'=>'form-control'])!!}
-                                                   
-                                                    @if($errors->has("address"))
-                                                      <p class="text-danger">
-                                                        {{$errors->first('address')}}
-                                                      </p>
-                                                    @else
-                                                        <span  class="text-danger">*</span>
-                                                    @endif
-                                                    
-                                                </div>
-
-                                            </div>
-
-
-
-
-                                             <div class="col-sm-10">
-
-                                           <div class="form-group">
-                                                    <label for="name"> Email 2 </label>
-        {!! Form::text('email1',@$data['email1'],['class'=>'form-control'])!!}
-                                                  
-                                                   
-                                                </div>
-
-                                            </div>
-                                            <div class="col-sm-10">
-
-                                                <div class="form-group">
-
-                                                    <label for="name"> Số điện thoại 2</label>
-        {!! Form::text('phone1',@$data['phone1'],['class'=>'form-control'])!!}
-                                                
-                                                   
-                                                </div>
-
-                                            </div>
-
-
-
-                                           
-                                            <div class="col-sm-10">
-
-                                                <div class="form-group">
-                                                    <label for="name"> Địa chỉ 2  </label>
-        {!! Form::text('address1',@$data['address1'],['class'=>'form-control'])!!}
-                                                   
-                                                 
-                                                    
-                                                </div>
-
-                                            </div>
-
 
                                             
 

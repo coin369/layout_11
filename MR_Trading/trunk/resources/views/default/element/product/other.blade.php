@@ -2,7 +2,7 @@
                                                 <div class="item col-md-12-items">
                                                     <div class="s-2-single-service">
                                                         <div class="s-2-image ">
-                                                            <a href="{{route('detail',['alias'=>$product['alias']] )}}" title="{{$product['name']}}"><img src="{{asset_cdn('public/upload/product/big/'.$product['picture'])}}" title="{{$product['name']}}"  ></a>
+                                                            <a href="{{route('detail',['alias'=>$product['alias']] )}}" title="{{$product['name']}}"><img src="{{asset(PUBLIC_URL.'upload/product/big/'.$product['picture'])}}" title="{{$product['name']}}"  ></a>
                                                         </div>
                                                         <div class="ss-2-content ">
                                                             <h3>  {{$product['name']}}</h3>

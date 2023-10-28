@@ -37,7 +37,7 @@
             <item>
                 <title><![CDATA[{{ str_replace("&","", $n->name ) }}]]></title>
                 <link>{{  route('detail',['alias'=>$n->alias]) }}</link>
-                <description><![CDATA[ <img src="MY_DOMAIN/public/upload/product/big/{{$n->picture}}" class="attachment-full size-full wp-post-image" alt="" loading="lazy" style="float:left; margin:0 15px 15px 0;" /> {!! $description !!}]]></description>
+                <description><![CDATA[ <img src="<?=PUBLIC_URL?>upload/product/big/{{$n->picture}}" class="attachment-full size-full wp-post-image" alt="" loading="lazy" style="float:left; margin:0 15px 15px 0;" /> {!! $description !!}]]></description>
                 
 
                 <?php

@@ -46,7 +46,7 @@ class UserController extends AppController
                 return redirect("/admin/customer/add")->withErrors($validater)->withInput();
             }else{
 
-                $TNew=new App\User();
+                $TNew=new App\Models\User();
                 $TNew->name=$request->input("name");
                 $TNew->email=$request->input("email");
                 $TNew->username=$request->input("username");
@@ -96,13 +96,13 @@ class UserController extends AppController
         }
         $this->View['url']=$url;
        
-        $this->View['data_list']=App\User::whereRaw($sql)->orderBy('id')->paginate(20);
+        $this->View['data_list']=App\Models\User::whereRaw($sql)->orderBy('id')->paginate(20);
         $this->View['search']=$search;
         return view("admin.general.user.lists",$this->View);
     }
     public function edit($id,Request $request){
         if($id){
-            $TUPdated=App\User::find($id);
+            $TUPdated=App\Models\User::find($id);
             if(!empty($TUPdated)){
                     $data=[];
                     $get_request=[
@@ -177,7 +177,7 @@ class UserController extends AppController
         
         if($request->isMethod("post")){
             if($id=$request->input("id")){
-                $User = App\User::find($id);
+                $User = App\Models\User::find($id);
                 if(!empty($User)){
                  
                   

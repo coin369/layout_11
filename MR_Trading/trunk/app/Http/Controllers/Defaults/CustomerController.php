@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 use Validator;
 use Auth;
 
-use App\Model\Users as DTUsers;
-use App\Model\Contact as DTContact;
-use App\Model\Order as DTOrder;
+use App\Models\Users as DTUsers;
+use App\Models\Contact as DTContact;
+use App\Models\Order as DTOrder;
 
 class CustomerController extends AppController
 {

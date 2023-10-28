@@ -7,7 +7,7 @@
 //
 //記述例）
 
-(function($) {
+(function ($) {
 
     $(".slider").bxSlider({
         auto: true,
@@ -15,10 +15,17 @@
         pager: true,
     });
     new WOW().init();
-     $('#toggle').click(function() {
-        $('nav').slideToggle();
+    $('#toggle').click(function () {
+        $('nav').toggleClass("active");
+        if ($("nav").hasClass("active")) {
+            $("#toggle .nav_menu_off").css("display", "none");
+            $("#toggle .nav_menu_on").css("display", "block");
+        } else {
+            $("#toggle .nav_menu_off").css("display", "block");
+            $("#toggle .nav_menu_on").css("display", "none");
+        }
     });
-    feed = function(config) {
+    feed = function (config) {
         var defaults = {
             url: 'blog',
             feedElement: '#feed',
@@ -56,14 +63,14 @@
             type: 'get',
             dataType: 'xml',
             timeout: 5000,
-            success: function(xml, status) {
+            success: function (xml, status) {
                 if (status === 'success') {
                     var row = 0;
                     var data = [];
                     var nodeName;
-                    $(xml).find('item').each(function() {
+                    $(xml).find('item').each(function () {
                         data[row] = {};
-                        $(this).children().each(function() { // 子要素を取得
+                        $(this).children().each(function () { // 子要素を取得
                             nodeName = $(this)[0].nodeName; // 要素名
                             data[row][nodeName] = {}; // 初期化
                             attributes = $(this)[0].attributes; // 属性を取得
@@ -79,7 +86,7 @@
                                                 $(options.feedElement).wrapInner('<div></div>');
                         */
                         for (i in data) {
-                            $(options.feedElement) /*.find('div')*/ .append('<dl><dt>' + dateFormat(data[i].pubDate.text) + '</dt><dd><a href="' + data[i].link.text + '">' + data[i].title.text + '</a></dd></dl>');
+                            $(options.feedElement) /*.find('div')*/.append('<dl><dt>' + dateFormat(data[i].pubDate.text) + '</dt><dd><a href="' + data[i].link.text + '">' + data[i].title.text + '</a></dd></dl>');
                         }
                     } else {
                         $(options.feedElement).wrapInner('<ul></ul>');

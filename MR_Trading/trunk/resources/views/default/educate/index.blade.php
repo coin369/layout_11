@@ -33,7 +33,7 @@
                                             @if($k<3)
                                                 <div class="col-md-4">
                                                     <div class="project-1">
-                                                        <img src="/public/upload/educate/{{$v['picture']}}" alt="{{$v['name']}}">
+                                                        <img src="/<?=PUBLIC_URL?>upload/educate/{{$v['picture']}}" alt="{{$v['name']}}">
                                                         <div class="prj-1-content prj-two">
                                                             <div class="p-icon">
                                                                 <span class="flaticon-paint-roller ficon-pj-1 ficon-pj-2"></span>
@@ -59,7 +59,7 @@
                                             @if($k>2)
                                         <div class="col-md-3">
                                             <div class="project-1">
-                                                <img src="/public/frontend/images/y4.jpg" alt="">
+                                                <img src="/<?=PUBLIC_URL?>frontend/images/y4.jpg" alt="">
                                                 <div class="prj-1-content prj-three">
                                                     <div class="p-icon">
                                                         <span class="flaticon-paint-roller ficon-pj-1 ficon-pj-3"></span>

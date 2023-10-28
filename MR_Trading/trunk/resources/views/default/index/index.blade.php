@@ -1,27 +1,21 @@
 @extends("default.default")
 @section("content")
   
-  <div class="slider">
+        @if(!empty($TSlide)):
+        <div class="slider">
+            @foreach($TSlide as $slide)
             <div class="items">
-                <a href="#" title="#">
-                    <img src="../assets/img/s1.jpg" alt="#" />
+                <a  href="{{$slide['links']}}"   title="{{$slide['name']}}" >
+                    <img src="/upload/slideshow/{{$slide['picture']}}" alt="{{$slide['name']}}" />
                 </a>
             </div>
-            <div class="items">
-                <a href="#" title="#">
-                    <img src="../assets/img/s2.jpg" alt="#" />
-                </a>
-            </div>
-            <div class="items">
-                <a href="#" title="#">
-                    <img src="../assets/img/s3.jpg" alt="#" />
-                </a>
-            </div>
+            @endforeach
         </div>
+        @endif
         <section class="main_section">
             <div id="informationWrap" class="informationWrap container_n">
                 <div class="info">
-                    <h2><img src="../assets/img/h2_information.png" width="152" height="53" alt="INFORMATION お知らせ"></h2>
+                    <h2><img src="/upload/banner/h2_information.png" width="152" height="53" alt="INFORMATION お知らせ"></h2>
                     <div id="feed" class="scroll_pane mCustomScrollbar _mCS_1 mCS_no_scrollbar">
                         <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
                             <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
@@ -53,7 +47,7 @@
                         <br/>今は志を共にする仲間も増え、我々は「食・仕事・環境を通じて豊な人生を創造する」を合言葉に、食べる楽しみの提供や多様化する働き方に適応した雇用の創出、一人ひとりが自分の役割を認識し、やりたいことやなりたい自分を見つけられる居場所づくりに力を入れております。
                         <a href="#" title="#" class="more_info">>>></a>
                     </p>
-                    <figure class=""><img src="../assets/img/img_message1.png" alt="代表取締役 会長 綿貫 英和"></figure>
+                    <figure class=""><img src="/upload/banner/img_message1.png" alt="代表取締役 会長 綿貫 英和"></figure>
 
                 </div>
 
@@ -68,7 +62,7 @@
                     <li class="view banner show on">
                         <a href="#" title="#" class="">
                             <figure>
-                                <img src="../assets/img/b111.jpg" alt="">
+                                <img src="/upload/banner/b111.jpg" alt="">
                             </figure>
 
                             <h3>人材総合支援事業</h3>
@@ -78,7 +72,7 @@
                     <li class="view banner show on">
                         <a href="#" title="#" class="">
                             <figure>
-                                <img src="../assets/img/b1_1.jpg" alt="">
+                                <img src="/upload/banner/b1_1.jpg" alt="">
                             </figure>
 
                             <h3>食品製造販売事業</h3>
@@ -96,11 +90,11 @@
 
                 <ul>
                     <li>
-                        <a href="#" title="#"><img alt="#" src="../assets/img/a1.jpg" /></a>
+                        <a href="#" title="#"><img alt="#" src="/upload/banner/a1.jpg" /></a>
                         <h5>会社案内</h5>
                     </li>
                     <li>
-                        <a href="#" title="#"><img alt="#" src="../assets/img/a2.jpg" /></a>
+                        <a href="#" title="#"><img alt="#" src="/upload/banner/a2.jpg" /></a>
                         <h5>採用情報</h5>
                     </li>
                 </ul>
@@ -163,15 +157,15 @@
             </div>
             <section id="contactWrap">
                 <div id="contact">
-                    <h2><img src="../assets/img/h2_contact.png" alt="CONTACT" width="137" height="36"> </h2>
+                    <h2><img src="/upload/banner/h2_contact.png" alt="CONTACT" width="137" height="36"> </h2>
                     <p id="contactTel">
-                        <b><img src="../assets/img/tel_header_sub2.png" alt="0473-69-7071" class="is-top is-hotline"><strong>0473-69-7071</strong></b><br>
+                        <b><img src="/upload/banner/tel_header_sub2.png" alt="0473-69-7071" class="is-top is-hotline"><strong>0473-69-7071</strong></b><br>
                         <span>受付時間：平日 9:00～18:00</span>
                     </p>
                     <p id="contactBtn">
-                        <a href="#" title="#" class="imgHover07"><img src="../assets/img/btn_contact1.png" alt="採用エントリー・お問い合わせ"></a>
+                        <a href="#" title="#" class="imgHover07"><img src="/upload/banner/btn_contact1.png" alt="採用エントリー・お問い合わせ"></a>
                     </p>
-                    <p class="img_contact"><img src="../assets/img/img_contact.png" alt="" width="230" height="206"> </p>
+                    <p class="img_contact"><img src="/upload/banner/img_contact.png" alt="" width="230" height="206"> </p>
                 </div>
             </section>
         </section>

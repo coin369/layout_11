@@ -10,15 +10,15 @@ use App\Http\Controllers\Admin\AppController;
 use App;
 use Validator;
 
-use App\Model\WP\Posts as DTPosts;
-use App\Model\WP\Cate as WPCate;
-use App\Model\WP\Postmeta as WPPostmeta;
+use App\Models\WP\Posts as DTPosts;
+use App\Models\WP\Cate as WPCate;
+use App\Models\WP\Postmeta as WPPostmeta;
 
 
-use App\Model\Seo as DTSeo;
+use App\Models\Seo as DTSeo;
 
-use App\Model\News as DTNews;
-use App\Model\Tag as DTTag;
+use App\Models\News as DTNews;
+use App\Models\Tag as DTTag;
 
 class SeoController extends AppController
 {

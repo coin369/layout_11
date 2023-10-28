@@ -18,14 +18,14 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="{{asset_cdn('css/dashboard.css')}}" type="text/css" rel="stylesheet">
+    <link href="{{asset('css/dashboard.css')}}" type="text/css" rel="stylesheet">
 
 
-       <link href="{{asset_cdn('public/admin/admin/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{asset_cdn('public/admin/admin/css/simple-line-icons.css')}}" rel="stylesheet">
+       <link href="{{asset(PUBLIC_URL.'admin/admin/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset(PUBLIC_URL.'admin/admin/css/simple-line-icons.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}')}}">
     <!-- Main styles for this application -->
-    <link href="{{asset_cdn('public/admin/admin/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset(PUBLIC_URL.'admin/admin/css/style.css')}}" rel="stylesheet">
 
 
 </head>

@@ -5,16 +5,16 @@ namespace App\Http\Controllers\Defaults;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Model\Product as DTProduct;
-use App\Model\Cate as DTCate;
+use App\Models\Product as DTProduct;
+use App\Models\Cate as DTCate;
 
-use App\Model\Tag as DTTag;
-use App\Model\News as DTNews;
-use App\Model\Banner as DTBanner;
-use App\Model\Youtube as DTYoutube;
+use App\Models\Tag as DTTag;
+use App\Models\News as DTNews;
+use App\Models\Banner as DTBanner;
+use App\Models\Youtube as DTYoutube;
 
-use App\Model\Color as DTColor;
-use App\Model\Type as DTType;
+use App\Models\Color as DTColor;
+use App\Models\Type as DTType;
 
 
 use App\MrData;

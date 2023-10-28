@@ -147,7 +147,7 @@
                                                       <span style="color:red">*</span>
                                                 <div class="detail_banner">
                                                     
-                                                    <img src="/public/upload/banner/small_{{$data['picture']}}"/>
+                                                    <img src="/<?=PUBLIC_URL?>upload/banner/small_{{$data['picture']}}"/>
                                                 </div>
                                                         </div>
                                                        

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Defaults;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Socialite;
-use App\Model\Users as DTUsers;
+use App\Models\Users as DTUsers;
 use Auth;
 
 class SocialController extends AppController
@@ -90,7 +90,7 @@ class SocialController extends AppController
                 $check_email->save();
                    
                     //Auth::login( $check_email ,true);
-                    $my_user=\App\User::find($check_email->id);
+                    $my_user=\App\Models\User::find($check_email->id);
                       
                       Auth::login($my_user);
                          

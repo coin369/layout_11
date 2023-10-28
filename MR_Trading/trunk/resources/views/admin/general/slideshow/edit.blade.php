@@ -2,10 +2,12 @@
  @section('content')
 
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"> Trang chủ </li>
-                <li class="breadcrumb-item"><a href="/admin/slideshow/lists"> Danh sách  Slideshow     </a>
+                <li class="breadcrumb-item"> 
+                        <a href="/" target="_black">Home </a>
+                 </li>
+                <li class="breadcrumb-item"><a href="/admin/slideshow/lists">  Banner     </a>
                 </li>
-                
+
                  <li class="breadcrumb-item"> {{$data['name']}} </li>
             </ol>
 
@@ -33,7 +35,7 @@
                             <div class="card card-inverse card-primary text-center">
                                 <div class="card-block">
                                     <blockquote class="card-blockquote">
-                                        <p>cập nhật thông tin thành công. </p>
+                                        <p>Successfull!!!. </p>
                                        
                                     </blockquote>
                                 </div>
@@ -82,14 +84,14 @@
                                                       
                                                         <div class="form-group">
                                                             <label for="name"> Picture   </label>
-      {!! Form::file('picture',['class'=>'load_banner form-control is-invalid','accept'=>'image/*','id'=>'banner_name']) !!}
+      {!! Form::file('picture',['class'=>'load_banner form-control ','accept'=>'image/*','id'=>'banner_name']) !!}
                                                         
 
                                                  
                                                       <span style="color:red">*</span>
                                                 <div class="detail_banner">
                                                     
-                                                        <img class='img-thumbnail' src='/public/upload/slideshow/{{$data["picture"]}}' />
+                                                        <img class='img-thumbnail' src='/<?=PUBLIC_URL?>upload/slideshow/{{$data["picture"]}}' />
 
                                                 </div>
                                                         </div>

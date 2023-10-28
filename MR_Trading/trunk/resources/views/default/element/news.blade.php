@@ -6,7 +6,7 @@
                                     <div class="dlab-post-media dlab-img-effect radius-sm"> 
                                         <a href="{{route('news.cate',['alias'=>$news['alias']])}}"  title="{{$news['name']}}">
 
-                                            <img class='lazy' data-src="{{asset_cdn('public/upload/news/big/'.$news['picture'])}}" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw=="  title="{{$news['name']}}" alt="{{$news['name']}}">
+                                            <img class='lazy' data-src="{{asset(PUBLIC_URL.'upload/news/big/'.$news['picture'])}}" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw=="  title="{{$news['name']}}" alt="{{$news['name']}}">
                                           </a> </div>
                                     <div class="dlab-info">
                                        <div class="dlab-post-meta">

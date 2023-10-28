@@ -3,7 +3,7 @@
             <div id="footer">
                 <div id="accessContent">
                     <h2>
-                        <a href="/" title="#"><img src="../assets/img/logo1.jpg" alt="logo"></a>
+                        <a href="/" title="#"><img src="/upload/banner/logo1.jpg" alt="logo"></a>
                     </h2>
                     <p class="accessText">〒277-0054
                         <br> 千葉県柏市南増尾2丁目 14-45 <br> TEL/FAX : 0473-69-7071
@@ -34,13 +34,13 @@
 
                     <p class="partners_b">
                         <a href="#" title="#">
-                            <img src="../assets/img/p1.png" alt="#" />
+                            <img src="/upload/banner/p1.png" alt="#" />
                         </a>
                         <a href="#" title="#">
-                            <img src="../assets/img/p2.png" alt="#" />
+                            <img src="/upload/banner/p2.png" alt="#" />
                         </a>
                         <a href="#" title="#">
-                            <img src="../assets/img/p3.png" alt="#" />
+                            <img src="/upload/banner/p3.png" alt="#" />
                         </a>
                     </p>
                 </div>

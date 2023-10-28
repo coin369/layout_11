@@ -27,7 +27,7 @@ class ContactController extends AppController
         }
 
         $this->View['search']=$search;
-        $data_list=App\Model\Contact::where("name","LIKE","%{$search}%")
+        $data_list=App\Models\Contact::where("name","LIKE","%{$search}%")
                                 ->Orwhere("phone","LIKE","%{$search}%")
                                 ->Orwhere("email","LIKE","%{$search}%")
                                 ->orderBy("id","DESC")
@@ -40,7 +40,7 @@ class ContactController extends AppController
     public function edit($id,Request $request){
     
             $data=[];
-            $get_contact=App\Model\Contact::find($id);
+            $get_contact=App\Models\Contact::find($id);
            
                if($request->isMethod("post")){
                     $validator=Validator::make($request->all(),[
@@ -80,7 +80,7 @@ class ContactController extends AppController
         
         
             if($id=$request->input("id")){
-                App\Model\Contact::find($id)->delete();
+                App\Models\Contact::find($id)->delete();
                 echo 'destroy success';exit;
             }
        

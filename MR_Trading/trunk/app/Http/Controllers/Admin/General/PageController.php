@@ -22,7 +22,7 @@ class PageController extends AppController
             if($Validator->fails()){
                 return redirect("/admin/page/add")->withErrors($Validator)->withInput();
             }else{
-                $TNew=new App\Model\Page();
+                $TNew=new App\Models\Page();
                 $TNew->name=$request->input("name");
                 $TNew->alias=App\MrData::toAlias2($request->input("name"));
                 $TNew->content=$request->input("contents");
@@ -41,14 +41,14 @@ class PageController extends AppController
             $search=$request->input("search");
         }
         $this->View['search']=$search;
-        $this->View['data_list']=App\Model\Page::where("name","LIKE","%{$search}%")->paginate(20);
+        $this->View['data_list']=App\Models\Page::where("name","LIKE","%{$search}%")->paginate(20);
         return view("admin.general.page.list",$this->View);
     }
     public function edit($id,Request $request){
         $data=[];
 
        
-            $get_page=App\Model\Page::find($id);
+            $get_page=App\Models\Page::find($id);
             if($request->isMethod("post")){
                 $validator=Validator::make($request->all(),[
                     "name"=>"required|unique:ca_page,name,{$id},id"
@@ -79,7 +79,7 @@ class PageController extends AppController
         
         if($request->isMethod("post")){
             if($id=$request->input("id")){
-                $remove=App\Model\Page::find($id);
+                $remove=App\Models\Page::find($id);
                 $remove->delete();
                 echo 'destroy success';exit;
             }

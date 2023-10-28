@@ -2,8 +2,10 @@
  @section('content')
 
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"> Trang chủ </li>
-                <li class="breadcrumb-item"><a href=""> Thêm mới Slideshow     </a>
+                <li class="breadcrumb-item"> 
+                        <a href="/" target="_black">Home </a>
+                 </li>
+                <li class="breadcrumb-item"><a href=""> Add new Banner     </a>
                 </li>
                
               
@@ -34,7 +36,7 @@
                             <div class="card card-inverse card-primary text-center">
                                 <div class="card-block">
                                     <blockquote class="card-blockquote">
-                                        <p>Thêm mới thông tin thành công. </p>
+                                        <p>Successfull!!!. </p>
                                        
                                     </blockquote>
                                 </div>
@@ -44,7 +46,7 @@
             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Thông tin Slideshow     </strong>
+                                        <strong>   </strong>
                                         <small>Form</small>
                                     </div>
                                     <div class="card-body">
@@ -53,8 +55,8 @@
                                            
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <label for="name">Tên  </label>
- {!! Form::text('name',@$data['name'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Nhập..."  ]) !!}
+                                                    <label for="name">Name:  </label>
+ {!! Form::text('name',@$data['name'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"..."  ]) !!}
     <span style="color:red">*</span>
                                                     
                                                    
@@ -64,8 +66,8 @@
                                             
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <label for="name">Links   </label>
- {!! Form::text('links',@$data['links'],['class'=>!empty($error['links'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Nhập..."  ]) !!}
+                                                    <label for="name">Link:   </label>
+ {!! Form::text('links',@$data['links'],['class'=>!empty($error['links'])? "form-control  is-invalid":"form-control ", "placeholder"=>"..."  ]) !!}
     <span style="color:red">*</span>
                                                     
                                                  
@@ -74,7 +76,7 @@
                                              <div class="col-sm-10">
 
                                                 <div class="form-group">
-                                                    <label for="name"> Vị trí  </label>
+                                                    <label for="name"> Order by ( ASC ) </label>
 {!! Form::number("position",@$data['position'],[ 'class'=> 'form-control','placeholder'=>'' ])!!}
                                                 </div>
 
@@ -85,7 +87,7 @@
                                                       
                                                         <div class="form-group">
                                                             <label for="name"> Picture   </label>
-      {!! Form::file('picture',['class'=>'load_banner form-control is-invalid','accept'=>'image/*','id'=>'banner_name']) !!}
+      {!! Form::file('picture',['class'=>'load_banner form-control','accept'=>'image/*','id'=>'banner_name']) !!}
                                                         
 
                                                   
@@ -113,8 +115,8 @@
                                        
                                             <div class="card-footer">
                                                
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> LƯU </button>
-                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> LÀM LẠI </button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save  </button>
+                                                
                                             </div>
                                         </div>
 

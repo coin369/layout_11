@@ -14,10 +14,10 @@ use Webp;
 use Excel;
 use SEO\Seo;
 
-use App\Model\Tag as DTTag;
+use App\Models\Tag as DTTag;
 
-use App\Model\News as DTNews;
-use App\Model\News_Cate as DTNewsCate;
+use App\Models\News as DTNews;
+use App\Models\News_Cate as DTNewsCate;
 class NewsController extends AppController
 {
     protected $View=[];
@@ -257,7 +257,7 @@ class NewsController extends AppController
                 $id=$_GET['id'];
                 $n=DTNews::find($id);
                 if(!empty($n)){
-                        $product =new \App\Model\Product();
+                        $product =new \App\Models\Product();
                         $product->name=$n->name;
                         $product->alias=$n->slug;
                         $product->cid_cate=3;

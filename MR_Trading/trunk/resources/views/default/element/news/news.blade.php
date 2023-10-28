@@ -5,7 +5,7 @@
                     <div class="col-md-4 itemsblog">
                                 <div class="img_blog">
                                     <a href="{{route('news.cate',['alias'=>$news['alias']])}}"  title="{{$news['name']}} Xem thêm" class="blog-two ">
-                                        <img class="lazy" src="{{asset_cdn('public/upload/news/'.$news['picture'])}}" alt="{{$news['name']}}" title="{{$news['name']}}">
+                                        <img class="lazy" src="{{asset(PUBLIC_URL.'upload/news/'.$news['picture'])}}" alt="{{$news['name']}}" title="{{$news['name']}}">
                                     </a>
                                 </div>
                                 <div class="blog-one ">

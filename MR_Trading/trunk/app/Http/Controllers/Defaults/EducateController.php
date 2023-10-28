@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Defaults;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Model\Educate as DTEducate;
+use App\Models\Educate as DTEducate;
 
-use App\Model\Tag as DTTag;
+use App\Models\Tag as DTTag;
 
 use App\MrData;
 use Cache;

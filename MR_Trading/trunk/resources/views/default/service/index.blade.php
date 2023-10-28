@@ -36,7 +36,7 @@
                                         <div class="service-box text-center">
                                             <div class="service-images m-b15">
                                             	<a href='{{route("service.detail",["alias"=>$service["alias"]])}}' title="  {{$service['description']}}">
-	                                                <img class='lazy' data-src="{{asset_cdn('public/upload/service/'.$service['picture'])}}" alt="  {{$service['name']}}"/>
+	                                                <img class='lazy' data-src="{{asset(PUBLIC_URL.'upload/service/'.$service['picture'])}}" alt="  {{$service['name']}}"/>
 	                                            </a>
                                             </div>
                                             <div class="service-content">

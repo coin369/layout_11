@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\AppController;
-use App\Model\Educate as DTEducate;
+use App\Models\Educate as DTEducate;
 use App\MrData as MrData;
 use App;
 use Validator;

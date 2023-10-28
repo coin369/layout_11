@@ -96,7 +96,7 @@
 
                                             foreach($t as $x):
                                         ?>
-                                        <a href="MY_DOMAIN/tim-kiem/{{$x['alias']}}" title="{{$x['name']}}" target="_black" >
+                                        <a href="/tim-kiem/{{$x['alias']}}" title="{{$x['name']}}" target="_black" >
                                             {{$x['name']}}
                                         </a>
                                         ;

@@ -20,7 +20,7 @@ class NewsletterController extends AppController
         if($request->isMethod("get")){
             $search=$request->input("search");
         }
-        $data_list=App\Model\Newsletter::where("email","LIKE","%{$search}%")->orderBy("id","DESC")->paginate(20);
+        $data_list=App\Models\Newsletter::where("email","LIKE","%{$search}%")->orderBy("id","DESC")->paginate(20);
         $this->View['data_list']=$data_list;
         $this->View['search']=$search;
         return view("admin.general.newsletter.list",$this->View);
@@ -37,7 +37,7 @@ class NewsletterController extends AppController
             $excel->setDescription('A demonstration to change the file properties');*/
             $excel->sheet('Danh sách email', function($sheet) use ($request) {
                 $search=$request->input("search");
-                $data=App\Model\Newsletter::where("email","LIKE","%{$search}%")->orderBy("id","DESC")->get();
+                $data=App\Models\Newsletter::where("email","LIKE","%{$search}%")->orderBy("id","DESC")->get();
                 $result=[];
                 $i=1;
                 foreach ($data as $key => $value) {
@@ -57,7 +57,7 @@ class NewsletterController extends AppController
         
         if($request->isMethod("post")){
             if($id=$request->input("id")){
-                App\Model\Newsletter::find($id)->delete();
+                App\Models\Newsletter::find($id)->delete();
                 echo 'destroy success';exit;
             }
         }

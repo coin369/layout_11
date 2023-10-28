@@ -2,7 +2,7 @@
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6">
                         <div class="single-service-style1">
                             <div class="img-holder-1">
-                                <img class="lazy" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset_cdn('/upload/product/big/'.$product['picture'])}}" title="{{$product['name']}}"   alt="{{$product['name']}}"/>
+                                <img class="lazy" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset('/upload/product/big/'.$product['picture'])}}" title="{{$product['name']}}"   alt="{{$product['name']}}"/>
 
                                
 </a>

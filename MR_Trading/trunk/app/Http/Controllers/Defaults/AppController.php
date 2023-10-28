@@ -5,25 +5,25 @@ namespace App\Http\Controllers\Defaults;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
-use App\Model\General as DTGeneral;
-use App\Model\Page as DTPage;
-use App\Model\Cate as DTCate;
-use App\Model\Banner as DTBanner;
-use App\Model\Product as DTProduct;
+use App\Models\General as DTGeneral;
+use App\Models\Page as DTPage;
+use App\Models\Cate as DTCate;
+use App\Models\Banner as DTBanner;
+use App\Models\Product as DTProduct;
 
-use App\Model\Service as DTService;
+use App\Models\Service as DTService;
 
-use App\Model\News_Cate as DTNewscate;
+use App\Models\News_Cate as DTNewscate;
 
 
 
-use App\Model\Redirects as DTRedirects;
-use App\Model\OldPost as DTOldPost;
-use App\Model\News as DTNews;
+use App\Models\Redirects as DTRedirects;
+use App\Models\OldPost as DTOldPost;
+use App\Models\News as DTNews;
 
-use App\Model\Seolinks as DTSeolinks;
-use App\Model\Youtube as DTYoutube;
-use App\Model\Slideshow as DTSlideshow;
+use App\Models\Seolinks as DTSeolinks;
+
+
 use Cache;
 use URL;
 use Session;
@@ -34,7 +34,7 @@ use Redirect;
 use Jenssegers\Agent\Agent;
 
 use SEO\Models\Page as SEOPAGE;
-use App\Model\Seo as DTSeo;
+use App\Models\Seo as DTSeo;
 class AppController extends Controller
 {
    protected $View=[];
@@ -107,18 +107,6 @@ class AppController extends Controller
      
       $this->View['action_menu']=1;
 
-      $this->View['TCate']=$parent=Cache::remember("App_TParents",2000,function(){
-            return DTCate::where("status","1")->where("cid_parent","0")->orderBy("orderby","DESC")->get();
-      });
-      $this->View['TChild']=Cache::remember("App_TCHILD",2000,function() use ($parent){
-            $result=[];
-            foreach($parent as $c ){
-                $result[$c->alias]=  DTCate::where("status","1")->where("cid_parent",$c->id)->orderBy("orderby","ASC")->get();
-            }
-            return $result;
-          
-      });
-      
      
       // $this->View['TService']=Cache::remember("App_TSERVICE",200,function(){
       //    return DTService::where("status",'1')->orderBy("id","DESC")->get();
@@ -128,12 +116,7 @@ class AppController extends Controller
          return DTPage::where("status",'2')->orderBy("id","ASC")->get();
        });
 
-       $this->View['TNewscate']=Cache::remember("App_TNEWS_CATE",2000,function(){
-         return DTNewscate::where("status",'1')->where("cid_parent","!=",0)->orderBy("name","ASC")->get();
-       });
-
-
-    
+      
   
       $this->View["TGeneral"]=$General=Cache::remember("App_TGeneral",2000,function(){
         return DTGeneral::find(1);
@@ -146,10 +129,7 @@ class AppController extends Controller
     //  Cache::flush();
 
      
-        $this->View['TSlide']=Cache::remember("Index_Slideshow",10000,function(){
-            return  DTSlideshow::where('status','1')->orderBy("position","ASC")->get();
-        });
-
+      
      
 
 

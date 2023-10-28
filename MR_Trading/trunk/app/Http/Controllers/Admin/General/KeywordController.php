@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\AppController;
 use App;
 use Validator;
 
-use App\Model\Tag as DTTag;
+use App\Models\Tag as DTTag;
 
 class KeywordController extends AppController
 {
@@ -57,7 +57,7 @@ class KeywordController extends AppController
                                         [
                                            'title' => $TUpdated->name,
                                            'images' => [
-                                               "MY_DOMAIN/public/upload/slideshow/slide_1618281115.jpg.webp"
+                                               "/upload/slideshow/slide_1618281115.jpg.webp"
                                            ]
                                        ]
                                     
@@ -130,7 +130,7 @@ class KeywordController extends AppController
                                         [
                                            'title' => $TUpdated->name,
                                            'images' => [
-                                               "MY_DOMAIN/public/upload/slideshow/slide_1618281115.jpg.webp"
+                                               "/upload/slideshow/slide_1618281115.jpg.webp"
                                            ]
                                        ]
                                     

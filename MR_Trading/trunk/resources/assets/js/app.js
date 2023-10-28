@@ -1,6 +1,10 @@
-window.$ = window.jQuery = require("../js/jquery-2.2.0.min");
-require("../js/jquery.scrollUp.js");
-require("../js/common.js");
-window.WOW = require('../js/wow.js');
-require("../js/jquery.bxslider.min.js");
-require("../js/feed.js");
+window.$ = window.jQuery = import("./jquery-2.2.0.min");
+window.$.scrollUp=import("./jquery.scrollup.js");
+
+
+import("./common.js");
+
+window.$.bxSlider=import("./jquery.bxslider.min.js");
+
+
+import("./feed.js");

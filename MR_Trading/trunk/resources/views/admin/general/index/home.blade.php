@@ -75,7 +75,7 @@
                                                     @endif
                                                       <span style="color:red">*</span>
                                                 <div class="detail_banner">
-                                                        <img src="/public/upload/banner/{{@$data['picture1']}}" />
+                                                        <img src="/<?=PUBLIC_URL?>upload/banner/{{@$data['picture1']}}" />
 
                                                 </div>
                                                         </div>
@@ -186,7 +186,7 @@
                                                     @endif
                                                       <span style="color:red">*</span>
                                                 <div class="detail_picture">
-                                                     <img src="/public/upload/banner/{{@$data['picture3']}}" />
+                                                     <img src="/<?=PUBLIC_URL?>upload/banner/{{@$data['picture3']}}" />
                                                 </div>
                                                         </div>
                                                        

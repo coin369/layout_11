@@ -64,7 +64,7 @@
                                                       <span style="color:red">*</span>
                                                 <div class="detail_banner">
                                                     
-                                                    <img src="/public/upload/rating/{{$data['picture']}}" />
+                                                    <img src="/<?=PUBLIC_URL?>upload/rating/{{$data['picture']}}" />
 
                                                 </div>
                                                         </div>

@@ -3,7 +3,7 @@
                         <div class="single-service-style1">
                             <div class="img-holder-1">
                                 <a href="{{route('detail',['alias'=>$product['alias']] )}}" title="{{$product['name']}}">
-                                <img class="lazy" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset_cdn('/upload/product/big/'.$product['picture'])}}" title="{{$product['name']}}"  alt="{{$product['name']}}"
+                                <img class="lazy" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset('/upload/product/big/'.$product['picture'])}}" title="{{$product['name']}}"  alt="{{$product['name']}}"
                                 width="370" 
                                 height="277" 
                                 />

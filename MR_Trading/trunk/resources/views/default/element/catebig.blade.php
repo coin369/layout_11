@@ -3,7 +3,7 @@
                         <div class="">
                             <div class="img-holder-1">
                                <a href="{{route('cate',['parent'=>$my_cate['alias'] ,'alias'=>$cate['alias']] )}}" title="{{$cate['name']}}">
-                                <img class="lazy" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset_cdn('/upload/cate/big/'.$cate['picture'])}}"   alt="{{$cate['name']}}" title="{{$cate['name']}}"
+                                <img class="lazy" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw==" data-src="{{asset('/upload/cate/big/'.$cate['picture'])}}"   alt="{{$cate['name']}}" title="{{$cate['name']}}"
                                 width="570" 
                                 height="423" 
                                

@@ -109,7 +109,7 @@
                                                     
                                                 <div class="is_view_picture">
                         @if(!empty($seo_picture))
-                        <img src="/public/upload/seo/{{$seo_picture}}" class="thumbnail" style="width:100%" /> 
+                        <img src="/<?=PUBLIC_URL?>upload/seo/{{$seo_picture}}" class="thumbnail" style="width:100%" /> 
                         @endif
 
                                                 </div>

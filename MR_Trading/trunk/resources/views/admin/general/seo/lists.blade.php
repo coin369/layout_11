@@ -193,7 +193,7 @@
                                                       'title' =>$title,
                                                       'description'=>$description,
                                                       'images'=>[
-                                                                    asset_cdn("/upload/news/big/".$T->picture)
+                                                                    asset("/upload/news/big/".$T->picture)
                                                                 ],
                                                        'twitter'=>[
                                                             'title'=>$title,
@@ -273,14 +273,14 @@
                                             $TestSeoTag=new App\Model\TestSeoTag;
                                             $TestSeoTag->seo_page_id=$Seo->id;
                                             $TestSeoTag->seo_meta_tag_id=27;
-                                            $TestSeoTag->content=asset_cdn("/upload/news/big/".$T->picture);
+                                            $TestSeoTag->content=asset("/upload/news/big/".$T->picture);
                                             $TestSeoTag->save();
 
 
                                             $TestSeoTag=new App\Model\TestSeoTag;
                                             $TestSeoTag->seo_page_id=$Seo->id;
                                             $TestSeoTag->seo_meta_tag_id=9;
-                                            $TestSeoTag->content=asset_cdn("/upload/news/big/".$T->picture);
+                                            $TestSeoTag->content=asset("/upload/news/big/".$T->picture);
                                             $TestSeoTag->save();
 
                                         }
@@ -346,7 +346,7 @@
                                                       'title' =>$title,
                                                       'description'=>$description,
                                                       'images'=>[
-                                                                    asset_cdn("/upload/news/big/".$T->picture)
+                                                                    asset("/upload/news/big/".$T->picture)
                                                                 ],
                                                        'twitter'=>[
                                                             'title'=>$title,
@@ -426,14 +426,14 @@
                                             $TestSeoTag=new App\Model\TestSeoTag;
                                             $TestSeoTag->seo_page_id=$Seo->id;
                                             $TestSeoTag->seo_meta_tag_id=27;
-                                            $TestSeoTag->content=asset_cdn("/upload/news/big/".$T->picture);
+                                            $TestSeoTag->content=asset("/upload/news/big/".$T->picture);
                                             $TestSeoTag->save();
 
 
                                             $TestSeoTag=new App\Model\TestSeoTag;
                                             $TestSeoTag->seo_page_id=$Seo->id;
                                             $TestSeoTag->seo_meta_tag_id=9;
-                                            $TestSeoTag->content=asset_cdn("/upload/news/big/".$T->picture);
+                                            $TestSeoTag->content=asset("/upload/news/big/".$T->picture);
                                             $TestSeoTag->save();
 
                                         }
@@ -475,7 +475,7 @@
                                                       'title' =>$title,
                                                       'description'=>$description,
                                                       'images'=>[
-                                                                    asset_cdn("/upload/service/big/".$T->picture)
+                                                                    asset("/upload/service/big/".$T->picture)
                                                                 ],
                                                        'twitter'=>[
                                                             'title'=>$title,
@@ -555,14 +555,14 @@
                                             $TestSeoTag=new App\Model\TestSeoTag;
                                             $TestSeoTag->seo_page_id=$Seo->id;
                                             $TestSeoTag->seo_meta_tag_id=27;
-                                            $TestSeoTag->content=asset_cdn("/upload/service/big/".$T->picture);
+                                            $TestSeoTag->content=asset("/upload/service/big/".$T->picture);
                                             $TestSeoTag->save();
 
 
                                             $TestSeoTag=new App\Model\TestSeoTag;
                                             $TestSeoTag->seo_page_id=$Seo->id;
                                             $TestSeoTag->seo_meta_tag_id=9;
-                                            $TestSeoTag->content=asset_cdn("/upload/service/big/".$T->picture);
+                                            $TestSeoTag->content=asset("/upload/service/big/".$T->picture);
                                             $TestSeoTag->save();
 
                                         }

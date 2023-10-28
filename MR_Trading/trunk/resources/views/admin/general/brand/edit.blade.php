@@ -65,7 +65,7 @@
                                                       <span style="color:red">*</span>
                                                 <div class="detail_Brand">
                                                     
-                                                    <img class='img-thumbnail' src='/public/upload/brand/{{$data["picture"]}}'/>
+                                                    <img class='img-thumbnail' src='/<?=PUBLIC_URL?>upload/brand/{{$data["picture"]}}'/>
                                                 </div>
                                                         </div>
                                                        

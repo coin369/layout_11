@@ -4,7 +4,7 @@
                                     <div class="s-2-image ">
                                           <a href="{{route('detail',['cate'=>$product->Cate()['alias'],'alias'=>$product['alias']])}}" title="{{$product['name']}}">
 
-                                             <img class='lazy' src="{{asset_cdn('public/upload/product/big/'.$product['picture'])}}"  alt="{{$product['name']}}" title="{{$product['name']}}">
+                                             <img class='lazy' src="{{asset(PUBLIC_URL.'upload/product/big/'.$product['picture'])}}"  alt="{{$product['name']}}" title="{{$product['name']}}">
 
                                         </a>
                                     </div>

@@ -2,7 +2,7 @@
                                                             <div class="item-widgets-left">
                                                                 <a href="{{route('detail',['cate'=>$product->Cate()['alias'],'alias'=>$product['alias']])}}" title="{{$product['name']}}">
 
-                                                                	<img class="lazy" data-src="{{asset_cdn('public/upload/product/small/'.$product['picture'])}}" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw=="  alt="{{$product['name']}}" title="{{$product['name']}}" style="width:67px" /></a>
+                                                                	<img class="lazy" data-src="{{asset(PUBLIC_URL.'upload/product/small/'.$product['picture'])}}" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw=="  alt="{{$product['name']}}" title="{{$product['name']}}" style="width:67px" /></a>
                                                             </div>
                                                             <div class="item-widgets-body text-black">
                                                                 <h6 class="item-title text-uppercase font-weight-500 m-t0">

@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 
-use App\Model\Recuitment as DTRecuitment;
-use App\Model\News as DTNews;
-use App\Model\News_Cate as DTNewsCate;
+use App\Models\Recuitment as DTRecuitment;
+use App\Models\News as DTNews;
+use App\Models\News_Cate as DTNewsCate;
 use Cache;
 
 

@@ -9,16 +9,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\AppController;
 use Validator;
 use App;
-use App\Model\General as DTGeneral;
+use App\Models\General as DTGeneral;
 use Image;
 
 use DB;
 use File;
-use App\Model\Service as DTService;
+use App\Models\Service as DTService;
 
-use App\Model\News as DTNews;
-use App\Model\Product as DTProduct;
-use App\Model\Tag as DTTag;
+use App\Models\News as DTNews;
+use App\Models\Product as DTProduct;
+use App\Models\Tag as DTTag;
 class IndexController extends AppController
 {
     /**
@@ -44,16 +44,7 @@ class IndexController extends AppController
                     "phone"=>"required",
                     "address"=>"required",
                     "description"=>"required"
-                  
-            ],[
-                "name.required"=>" * Vui lòng nhập tên ",
-                 "sitename.required"=>" * Vui lòng nhập tên site  ",
-                  "email.required"=>" * Vui lòng nhập E-mail  ",
-                   "phone.required"=>" * Vui lòng nhập số điện thoại  ",
-                    "address.required"=>" * Vui lòng nhập địa chỉ  ",
-                    "description.required"=>" * Vui lòng nhập mô tả ",
-                    
-            ]);
+             ]);
             if($validator->fails()){
 
                 return redirect()->back()->withErrors($validator)->withInput();
@@ -61,17 +52,18 @@ class IndexController extends AppController
             }else{
                 $logo=$request->file("logo");
                 if($logo){
-                  $img=Image::make($logo)->resize(100,67); 
+               //   $img=Image::make($logo)->resize(100,67); 
                   $img->save(public_path("/upload/banner/logo.png"));
 
-                  $img=Image::make($logo)->resize(30,30); 
-                  $img->save(public_path("/upload/banner/favicon.png"));
+                
 
-                  $img=Image::make($logo);
-                   $img->opacity(60);
-                 // $img->resize(100,100);  
-                  $img->save(public_path("/upload/banner/logo_opacity.png"));
-                  // $logo->move(BANNER_PATH,"logo.png");
+                   
+                }
+                $logo=$request->file("logo2");
+                if($logo){
+               //   $img=Image::make($logo)->resize(100,67); 
+                  $img->save(public_path("/upload/banner/logo2.png"));
+
 
                    
                 }

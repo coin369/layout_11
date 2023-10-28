@@ -4,7 +4,7 @@
                                             <div class="single_product categorie s_product_three">
                                                     <div class="product_thumb">
                                                         <a href="{{route('detail',['cate'=>$product->Cate()['alias'],'alias'=>$product['alias']])}}" title="{{$product['name']}}">
-                                                            <img class='lazy' data-src="{{asset_cdn('public/upload/product/big/'.$product['picture'])}}" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw=="  alt="{{$product['name']}}" title="{{$product['name']}}">
+                                                            <img class='lazy' data-src="{{asset(PUBLIC_URL.'upload/product/big/'.$product['picture'])}}" src="data:image/png;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICTAEAOw=="  alt="{{$product['name']}}" title="{{$product['name']}}">
                                                         </a>
                                                         
                                                       @if( count($my_promotion) >0 )

@@ -1,7 +1,7 @@
 @extends("default.default")
 @section('content')
      
-        <section class="breadcrumb-area style2" style="background-image: url({{asset_cdn('/assets/images/slde11-l.jpg')}})">
+        <section class="breadcrumb-area style2" style="background-image: url({{asset('/assets/images/slde11-l.jpg')}})">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">

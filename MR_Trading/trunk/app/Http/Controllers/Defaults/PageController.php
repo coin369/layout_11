@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 
-use App\Model\Page as DTPage;
-use App\Model\Contact as DTContact;
-use App\Model\Product as DTProduct;
-use App\Model\Cooperate as DTCooperate;
+use App\Models\Page as DTPage;
+use App\Models\Contact as DTContact;
+use App\Models\Product as DTProduct;
+use App\Models\Cooperate as DTCooperate;
 
-use App\Model\Youtubecate as DTYoutubecate;
-use App\Model\Newsletter as DTNewsletter;
-use App\Model\Youtube as DTYoutube;
+use App\Models\Youtubecate as DTYoutubecate;
+use App\Models\Newsletter as DTNewsletter;
+use App\Models\Youtube as DTYoutube;
 
 use Mail;
 use Cache;

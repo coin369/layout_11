@@ -44,7 +44,7 @@
       
     <link href="{{asset('/img/favicon.ico')}}" rel="shortcut icon">
   
-    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
+  @vite(['resources/assets/css/app.scss', 'resources/assets/js/app.js'])
 
 
 </head>
@@ -65,7 +65,7 @@
        
     </main>
  
-    <script src="../public/js/app.js"></script>
+   
 </body>
 
 </html>

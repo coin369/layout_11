@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\AppController;
-use App\Model\Rating as DTRating;
+use App\Models\Rating as DTRating;
 
 use App\MrData as MrData;
 use App;

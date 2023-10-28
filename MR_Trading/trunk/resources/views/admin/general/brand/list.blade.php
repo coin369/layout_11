@@ -53,7 +53,7 @@
                                                 </td>
                                              
                                                 <td>
-                                                        <img src="/public/upload/brand/{{$list['picture']}}" style='width:200px'/>
+                                                        <img src="/<?=PUBLIC_URL?>upload/brand/{{$list['picture']}}" style='width:200px'/>
                                                 </td>
                                                 </td>
                                                 

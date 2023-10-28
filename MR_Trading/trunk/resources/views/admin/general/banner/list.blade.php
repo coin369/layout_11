@@ -63,7 +63,7 @@
                                                         </td>
                                                        
                                                 <td>
-                                                        <img src="/public/upload/banner/small_{{$list['picture']}}" style='width:'/>
+                                                        <img src="/<?=PUBLIC_URL?>upload/banner/small_{{$list['picture']}}" style='width:'/>
                                                 </td>
                                                 </td>
                                                 

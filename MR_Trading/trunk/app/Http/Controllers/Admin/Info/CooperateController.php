@@ -11,7 +11,7 @@ use Validator;
 use Mail;
 use App;
 
-use App\Model\Cooperate as DTCooperate;
+use App\Models\Cooperate as DTCooperate;
 
 class CooperateController extends AppController
 {

@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Defaults;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Model\Service as DTService;
+use App\Models\Service as DTService;
 
-use App\Model\Tag as DTTag;
+use App\Models\Tag as DTTag;
 
 use App\MrData;
 use Cache;

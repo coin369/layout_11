@@ -26,17 +26,12 @@ class SlideshowController extends AppController
                     "name"=>"required",
                     "links"=>"required",
                     "picture"=>"required|mimes:jpg,jpeg,png"
-            ],[
-                    "name.required"=>"Vui lòng nhập tên",
-                    "links.required"=>"Vui lòng nhập đường dẫn ",
-                    "picture.required"=>"Vui lòng nhập hình ảnh ",
-                    "picture.mimes"=>" Vui lòng chọn đúng định dạng hình ảnh "
-            ]);
+           ]);
             if($validator->fails()){
                 return redirect()->back()->withErrors($validator)->withInput();
             }else{
                 $picture=$request->file("picture");
-                $TNew=new App\Model\Slideshow();
+                $TNew=new App\Models\Slideshow();
                 $TNew->name=$request->input("name");
                 $TNew->links=$request->input("links");
                  $TNew->position=$request->input("position");
@@ -49,26 +44,26 @@ class SlideshowController extends AppController
                             // config('constants.Slideshow.Current.Height'))
                             ->save(public_path("/upload/slideshow/".$name_picture));
 
-                 Image::make($picture)->resize(
-                            config('constants.Slideshow.Small.Width'),
-                            config('constants.Slideshow.Small.Height'))
-                 ->save(public_path("/upload/slideshow/small_".$name_picture));
+                //  Image::make($picture)->resize(
+                //             config('constants.Slideshow.Small.Width'),
+                //             config('constants.Slideshow.Small.Height'))
+                //  ->save(public_path("/upload/slideshow/small_".$name_picture));
 
-                Image::make($picture)->resize(
-                     config('constants.Slideshow.Big.Width'),
-                      config('constants.Slideshow.Big.Height'))
-                      ->save(public_path("/upload/slideshow/big_".$name_picture));
+                // Image::make($picture)->resize(
+                //      config('constants.Slideshow.Big.Width'),
+                //       config('constants.Slideshow.Big.Height'))
+                //       ->save(public_path("/upload/slideshow/big_".$name_picture));
 
 
 
                 $TNew->picture=$name_picture;
                 $TNew->status='1';
                 $TNew->save();
-                $request->session()->flash("success"," Thêm mới slide thành công");
+                $request->session()->flash("success"," Successfull!!!");
                 return redirect("/admin/slideshow/add");
             }
         }
-         $data['position']=App\Model\Slideshow::count();
+         $data['position']=App\Models\Slideshow::count();
         $this->View['data']=$data;
         return view("admin.general.slideshow.add",$this->View);
     }
@@ -78,24 +73,20 @@ class SlideshowController extends AppController
             $search=$request->input("search");
         }
         $this->View['search']=$search;
-        $this->View['data_list']=App\Model\Slideshow::where("name","LIKE","%$search%")->orderBy("position","ASC")->paginate(20);
+        $this->View['data_list']=App\Models\Slideshow::where("name","LIKE","%$search%")->orderBy("position","ASC")->paginate(20);
         return view("admin.general.slideshow.list",$this->View);
 
     }
     public function edit($id,Request $request){
       
-            $get_data=App\Model\Slideshow::find($id);
+            $get_data=App\Models\Slideshow::find($id);
             $data=[];
             if($request->isMethod("post")){
                 $validator=Validator::make($request->all(),[
                         "name"=>"required",
                         "links"=>"required",
                         
-                ],[
-                    "name.required"=>"Vui lòng nhập tên",
-                    "links.required"=>"Vui lòng nhập đường dẫn ",
-                  
-                 ]);
+                ]);
             if($validator->fails()){
                 return redirect()->back()->withErrors($validator)->withInput();
             }else{
@@ -109,15 +100,15 @@ class SlideshowController extends AppController
                             ->save(public_path("/upload/slideshow/".$name_picture));
 
 
-                     Image::make($picture)->resize(
-                                config('constants.Slideshow.Small.Width'),
-                                config('constants.Slideshow.Small.Height'))
-                     ->save(public_path("/upload/slideshow/small_".$name_picture));
+                    //  Image::make($picture)->resize(
+                    //             config('constants.Slideshow.Small.Width'),
+                    //             config('constants.Slideshow.Small.Height'))
+                    //  ->save(public_path("/upload/slideshow/small_".$name_picture));
 
-                    Image::make($picture)->resize(
-                         config('constants.Slideshow.Big.Width'),
-                          config('constants.Slideshow.Big.Height'))
-                          ->save(public_path("/upload/slideshow/big_".$name_picture));
+                    // Image::make($picture)->resize(
+                    //      config('constants.Slideshow.Big.Width'),
+                    //       config('constants.Slideshow.Big.Height'))
+                    //       ->save(public_path("/upload/slideshow/big_".$name_picture));
 
                           
 
@@ -130,7 +121,7 @@ class SlideshowController extends AppController
                 $get_data->status='1';
 
                 $get_data->save();
-                $request->session()->flash("success"," Cập nhật slide thành công");
+                $request->session()->flash("success"," Successfull!!!");
                 return redirect()->back();
             }
             }
@@ -146,8 +137,8 @@ class SlideshowController extends AppController
         
         if($request->isMethod("post")){
             if($id=$request->input("id")){
-                $s=App\Model\Slideshow::find($id);
-                @unlink(SLIDESHOW_PATH.$s->picture);
+                $s=App\Models\Slideshow::find($id);
+                @unlink(public_path("/upload/slideshow/".$s->picture) );
                 $s->delete();
                 echo 'destroy success';exit;
             }

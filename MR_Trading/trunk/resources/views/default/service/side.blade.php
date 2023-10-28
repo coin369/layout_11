@@ -30,7 +30,7 @@
 									 <li>
                                         <div class="img-holder">
                                             <a href='{{route("service.detail",["alias"=>$ss["alias"]])}}'  title="{{$ss['name']}}">
-                                                <img src="/public/upload/service/{{$ss['picture']}}" alt="{{$ss['name']}}">
+                                                <img src="/<?=PUBLIC_URL?>upload/service/{{$ss['picture']}}" alt="{{$ss['name']}}">
                                             </a>
                                         </div>
                                         <div class="title-holder">

@@ -58,7 +58,7 @@
                                                       
                                                        
                                                 <td>
-                                                        <img src="/public/upload/service/small/{{$list['picture']}}" style='width:100px' class='img-thumbnail'/>
+                                                        <img src="/<?=PUBLIC_URL?>upload/service/small/{{$list['picture']}}" style='width:100px' class='img-thumbnail'/>
                                                 </td>
                                                 <td>
                                                     @if($list['status']=='1')

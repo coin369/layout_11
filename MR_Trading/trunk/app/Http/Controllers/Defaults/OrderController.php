@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 
-use App\Model\Product as DTProduct;
-use App\Model\Order as DTOrder;
+use App\Models\Product as DTProduct;
+use App\Models\Order as DTOrder;
 use App\MrData as MrData;
 use Validator;
 use Auth;
 use Mail;
-use App\Model\Order_Product as DTOrderProduct;
+use App\Models\Order_Product as DTOrderProduct;
 
 class OrderController extends AppController
 {

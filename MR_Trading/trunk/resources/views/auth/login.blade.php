@@ -14,11 +14,11 @@
     <title>BACKEND </title>
 
     <!-- Icons -->
-    <link href="{{asset_cdn('public/admin/admin/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{asset_cdn('public/admin/admin/css/simple-line-icons.css')}}" rel="stylesheet">
+    <link href="{{asset(PUBLIC_URL.'admin/admin/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset(PUBLIC_URL.'admin/admin/css/simple-line-icons.css')}}" rel="stylesheet">
 
     <!-- Main styles for this application -->
-    <link href="{{asset_cdn('public/admin/admin/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset(PUBLIC_URL.'admin/admin/css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -78,9 +78,9 @@
     </div>
 
     <!-- Bootstrap and necessary plugins -->
-    <script src="public/admin/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="public/admin/bower_components/tether/dist/js/tether.min.js"></script>
-    <script src="public/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?=PUBLIC_URL?>admin/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="<?=PUBLIC_URL?>admin/bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="<?=PUBLIC_URL?>admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
 

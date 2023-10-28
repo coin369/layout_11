@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\AppController;
-use App\Model\Banner as DTBanner;
+use App\Models\Banner as DTBanner;
 use App;
 use Validator;
 use Image;

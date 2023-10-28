@@ -56,7 +56,7 @@
                                                       
                                                        
                                                 <td>
-                                                        <img src="/public/upload/rating/{{$list['picture']}}" style='width:100px' class='img-thumbnail'/>
+                                                        <img src="/<?=PUBLIC_URL?>upload/rating/{{$list['picture']}}" style='width:100px' class='img-thumbnail'/>
                                                 </td>
                                          
                                                 

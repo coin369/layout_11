@@ -9,15 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="">
-    <link rel="shortcut icon" href="{{asset_cdn('public/img/favicon.png')}}">
+    <link rel="shortcut icon" href="{{asset(PUBLIC_URL.'img/favicon.png')}}">
     <title> @yield('title','BANCKEND - ADMIN  ')	</title>
 
     <!-- Icons -->
-    <link href="{{asset_cdn('public/admin/admin/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{asset_cdn('public/admin/admin/css/simple-line-icons.css')}}" rel="stylesheet">
+    <link href="{{asset(PUBLIC_URL.'admin/admin/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset(PUBLIC_URL.'admin/admin/css/simple-line-icons.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}')}}">
     <!-- Main styles for this application -->
-    <link href="{{asset_cdn('public/admin/admin/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset(PUBLIC_URL.'admin/admin/css/style.css')}}" rel="stylesheet">
 
 
    
@@ -44,21 +44,21 @@
 
     
 
-    <script type="text/javascript" src="{{asset_cdn('public/admin/bower_components/jquery/dist/jquery.js')}}"></script>
+    <script type="text/javascript" src="{{asset(PUBLIC_URL.'admin/bower_components/jquery/dist/jquery.js')}}"></script>
  
-    <script type="text/javascript" src="{{asset_cdn('public/admin/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset(PUBLIC_URL.'admin/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
    
 
-    <script type="text/javascript"  src="{{asset_cdn('public/admin/admin/js/app.js')}}"></script>
+    <script type="text/javascript"  src="{{asset(PUBLIC_URL.'admin/admin/js/app.js')}}"></script>
 
-    <script type="text/javascript" src="{{asset_cdn('public/admin/ckeditor/ckeditor.js')}}"></script>
-    <script type="text/javascript" src="{{asset_cdn('public/admin/ckeditor/function.js')}}"></script>
+    <script type="text/javascript" src="{{asset(PUBLIC_URL.'admin/ckeditor/ckeditor.js')}}"></script>
+    <script type="text/javascript" src="{{asset(PUBLIC_URL.'admin/ckeditor/function.js')}}"></script>
 
 
     @include("admin.main.footer")
 
 
-     <script  src='<?= asset_cdn("public/admin/admin.js")?>'>
+     <script  src='<?= asset(PUBLIC_URL."admin/admin.js")?>'>
        
     </script>
     

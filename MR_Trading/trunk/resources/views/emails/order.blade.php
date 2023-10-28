@@ -85,7 +85,7 @@
 
                                             <td class="image" style="width: 100px">
                                                
-                                               <img style="width: 100px;" alt="{{$pr['product']['name']}}" class='lazyload' data-src="/public/upload/product/small/{{$pr['product']['picture']}}">
+                                               <img style="width: 100px;" alt="{{$pr['product']['name']}}" class='lazyload' data-src="/<?=PUBLIC_URL?>upload/product/small/{{$pr['product']['picture']}}">
                                             </td>
                                             <td>
                                                 <h2 class="product-name"> 
