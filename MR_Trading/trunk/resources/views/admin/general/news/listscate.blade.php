@@ -1,46 +1,41 @@
 @extends("admin.admin")
  @section('content')
-
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"> Trang chủ </li>
-                <li class="breadcrumb-item"><a href=""> Danh Mục Tin Tức     ({{$data_list->total()}})  </a>
+                <li class="breadcrumb-item"> 
+                        <a href="/" target="_black">Home </a>
+                 </li>
+
+                 
+                <li class="breadcrumb-item"><a href="">  Categories   ({{$data_list->total()}})    </a>
                 </li>
                
               
             </ol>
-
-
         <div class="container-fluid">
-            {!! Form::open(['method'=>'get']) !!}
-
-               <div class="col-sm-10">
-                                                <div class="form-group">
-                                                    <label for="name">Tìm kiếm thông tin   </label>
- {!! Form::text('search',@$search,['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Nhập tên Danh Mục Tin Tức     ..."  ]) !!}
-  <button type="submit" class="btn btn-sm btn-warning"><i class="fa fa-ban"></i> TÌM KIẾM  </button>
-                                                </div>
-                                            </div>
-            {!! Form::close()!!}
-
+            <div class="text-right">
+                <a href="/admin/news/addcate" class="text-right" style="text-align: right;">
+                   <i  style="font-size: 80px;" class="fa fa-plus-circle"></i>
+                </a>
+            </div>
 
 <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> Danh Mục Tin Tức     ( {{$data_list->total()}} )
+                                    <i class="fa fa-list"></i> Categories  ( {{$data_list->total()}} )
                                 </div>
                                 <div class="card-block">
                                     <table class="table table-sm">
                                         <thead>
                                             <tr>
                                                 <th>ID </th>
-                                                <th>Tên   </th>
-                                                <th> Ngày tạo  </th>
+                                                <th> Name   </th>
+                                                <th> Created At </th>
                                          
-                                                <th> Trạng thái  </th>
+                                                <th> Status </th>
                                                     
-                                                <th> Tuỳ chọn </th>
-                                                 <th> Danh mục con  </th>
+                                                <th> Option </th>
+                                               
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -49,7 +44,7 @@
                                             <tr>
                                                 <td><?php echo $list['id'];?></td>
                                                 <td>
-                                                     <a href='/tin-tuc/{{$list["alias"]}}' target='_black'>
+                                                     <a href='/news/{{$list["alias"]}}' target='_black'>
                                                             {{$list['name']}}
                                                          </a>
                                                             
@@ -57,75 +52,23 @@
                                                         </td>
                                                 <td>
                                                    
-                                                     <small>Created at : {{$list['created_at']}}</small><br />
-                                                    <small>Updated at : {{$list['updated_at']}}</small>
+                                                     <small>{{$list['created_at']}}</small>
+                                                
                                                 </td>
                                                
                                                 <td>
                                                     <?php if($list['status']=='1'):?>
-                                                         <a class="badge badge-primary "> Hiển thị  </a>
+                                                         <a class="border text-primary p-1 border-primary "> Active </a>
                                                     <?php else:?>
-                                                         <a class="badge badge-warning "> ẨN...  </a>
+                                                          <a class="border text-warning p-1 border-warning "> Hidden  </a>
                                                     <?php endif;?>
                                                 </td>
                                                  
                                                 <td>
-                                                    <a class="btn btn-sm btn-success" href='/admin/news/editcate/<?php echo $list['id'];?>'><i class="fa fa-edit"></i> Sửa </a><br /><br />
-                                                    <a class="btn btn-sm btn-danger click_remove" href='/admin/news/removecate?id=<?php echo $list['id'];?>&_token={{ csrf_token() }}'> <i class="fa fa-remove"></i> Xoá  </a>
+                                                    <a class="btn btn-sm btn-success" href='/admin/news/editcate/<?php echo $list['id'];?>'><i class="fa fa-edit"></i>  </a> 
+                                                    <a class="btn btn-sm btn-danger click_remove" href='/admin/news/removecate?id=<?php echo $list['id'];?>&_token={{ csrf_token() }}'> <i class="fa fa-remove"></i>   </a>
                                                 </td>
-                                                <td>
-                                                    @if($list->Child())
-                                                        <table class="table table-sm">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>ID </th>
-                                                                        <th>Tên   </th>
-                                                                        <th> Ngày tạo  </th>
-                                                                 
-                                                                        <th> Trạng thái  </th>
-                                                                            
-                                                                        <th> Tuỳ chọn </th>
-                                                                       
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <?php foreach($list->Child() as $c):?>
-                                                                      
-                                                                    <tr>
-                                                                        <td><?php echo $c['id'];?></td>
-                                                                        <td>
-                                                                             <a href='/tin-tuc/{{$c["alias"]}}' target='_black'>
-                                                                                    {{$c['name']}}
-                                                                                 </a>
-                                                                                    
-
-                                                                                </td>
-                                                                        <td>
-                                                                           
-                                                                             <small>Created at : {{$c['created_at']}}</small><br />
-                                                                            <small>Updated at : {{$c['updated_at']}}</small>
-                                                                        </td>
-                                                                       
-                                                                        <td>
-                                                                            <?php if($c['status']=='1'):?>
-                                                                                 <a class="badge badge-primary "> Hiển thị  </a>
-                                                                            <?php else:?>
-                                                                                 <a class="badge badge-warning "> ẨN...  </a>
-                                                                            <?php endif;?>
-                                                                        </td>
-                                                                         
-                                                                        <td>
-                                                                            <a class="btn btn-sm btn-success" href='/admin/news/editcate/<?php echo $c['id'];?>'><i class="fa fa-edit"></i> Sửa </a><br /><br />
-                                                                            <a class="btn btn-sm btn-danger click_remove" href='/admin/news/removecate?id=<?php echo $c['id'];?>&_token={{ csrf_token() }}'> <i class="fa fa-remove"></i> Xoá  </a>
-                                                                        </td>
-                                                                       
-                                                                    </tr>
-                                                                   
-                                                                   <?php endforeach;?>
-                                                                   
-                                                                </tbody>
-                                                            </table>
-                                                    @endif
+                                                
 
                                                 </td>
                                             </tr>

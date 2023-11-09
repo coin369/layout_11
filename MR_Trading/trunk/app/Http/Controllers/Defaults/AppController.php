@@ -90,7 +90,7 @@ class AppController extends Controller
 
     
       
-      $check_seo= Cache::remember("App_path_".md5(url()->full()),9000,function(){
+      $check_seo= Cache::remember("App_path_".md5(url()->full()),1000,function(){
             $a=  SEOPAGE::where("path",url()->full())->first();
             if(empty($a)){
                 return 1;
@@ -105,7 +105,7 @@ class AppController extends Controller
 
 
      
-      $this->View['action_menu']=1;
+      $this->View['active']='home';
 
      
       // $this->View['TService']=Cache::remember("App_TSERVICE",200,function(){
@@ -116,7 +116,7 @@ class AppController extends Controller
          return DTPage::where("status",'2')->orderBy("id","ASC")->get();
        });
 
-      
+      $this->View['DTBanner'] = DTBanner::get(); 
   
       $this->View["TGeneral"]=$General=Cache::remember("App_TGeneral",2000,function(){
         return DTGeneral::find(1);

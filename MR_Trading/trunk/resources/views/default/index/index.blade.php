@@ -1,7 +1,7 @@
 @extends("default.default")
 @section("content")
   
-        @if(!empty($TSlide)):
+        @if(!empty($TSlide))
         <div class="slider">
             @foreach($TSlide as $slide)
             <div class="items">
@@ -100,74 +100,11 @@
                 </ul>
             </section>
 
-            <section id="content" class="wow bounceInDown infox" data-wow-duration="1s" data-wow-delay="1s">
-                <section class="pageTitle">
-                    <div class="pageTitleIn">
-                        <h2>INFORMATION<span>お知らせ</span></h2>
-                    </div>
-                </section>
-                <div id="mainContents">
-                    <div class="div_box01">
-                        <ul class="inc-information__tax-list">
-                            <li class="inc-information__tax-item infotax_human">総合人材支援</li>
-                        </ul>
-                        <div class="inc-information__date">2022.09.14</div>
-                        <h3 class="h3_tit01">
-                            <a href="#" title="#">日本の労働者人口について</a></h3>
-                        <a href="#" title="#" class="information__date_a">
-                            >>>
-                        </a>
-                    </div>
-                    <div class="div_box01">
-                        <ul class="inc-information__tax-list">
-                            <li class="inc-information__tax-item infotax_human">総合人材支援</li>
-                        </ul>
-                        <div class="inc-information__date">2022.09.14</div>
-                        <h3 class="h3_tit01"><a href="#" title="#">日本の労働者人口について</a></h3>
-                        <a href="#" title="#" class="information__date_a">
-                            >>>
-                        </a>
-                    </div>
-                    <div class="div_box01">
-                        <ul class="inc-information__tax-list">
-                            <li class="inc-information__tax-item infotax_human">総合人材支援</li>
-                        </ul>
-                        <div class="inc-information__date">2022.09.14</div>
-                        <h3 class="h3_tit01"><a href="#" title="#">日本の労働者人口について</a></h3>
-                        <a href="#" title="#" class="information__date_a">
-                            >>>
-                        </a>
-                    </div>
-                    <div class="div_box01">
-                        <ul class="inc-information__tax-list">
-                            <li class="inc-information__tax-item infotax_human">総合人材支援</li>
-                        </ul>
-                        <div class="inc-information__date">2022.09.14</div>
-                        <h3 class="h3_tit01"><a href="#" title="#">日本の労働者人口について</a></h3>
-                        <a href="#" title="#" class="information__date_a">
-                            >>>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <div class="bnr">
-                <a href="#" target="_blank" rel="noopener" class="imgHover07 a_more">
-                    お知らせの一覧を見る >>>
-                </a>
-            </div>
-            <section id="contactWrap">
-                <div id="contact">
-                    <h2><img src="/upload/banner/h2_contact.png" alt="CONTACT" width="137" height="36"> </h2>
-                    <p id="contactTel">
-                        <b><img src="/upload/banner/tel_header_sub2.png" alt="0473-69-7071" class="is-top is-hotline"><strong>0473-69-7071</strong></b><br>
-                        <span>受付時間：平日 9:00～18:00</span>
-                    </p>
-                    <p id="contactBtn">
-                        <a href="#" title="#" class="imgHover07"><img src="/upload/banner/btn_contact1.png" alt="採用エントリー・お問い合わせ"></a>
-                    </p>
-                    <p class="img_contact"><img src="/upload/banner/img_contact.png" alt="" width="230" height="206"> </p>
-                </div>
-            </section>
+            @include("default.element.news.list")
+
+
+            @include("default.element.contact")
+            
         </section>
 
         

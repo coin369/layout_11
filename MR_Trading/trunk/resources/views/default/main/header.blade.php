@@ -15,7 +15,7 @@
                             <span>受付時間：平日9:00～18:00</span>
                         </div>
                         <div id="headerContact">
-                            <a href="contact.html" title="#" class="imgHover07"><img src="/upload/banner/btn_contact_header1.png" alt="採用エントリー・お問い合わせ"></a>
+                            <a href="{{route('contact')}}" title="採用エントリー・お問い合わせ" class="imgHover07"><img src="/upload/banner/btn_contact_header1.png" alt="採用エントリー・お問い合わせ"></a>
                         </div>
                         <!-- /headerList -->
                     </div>
@@ -27,10 +27,10 @@
                 </div>
                 <nav id="gNavi">
                     <ul class="nav topnav" id="myTopnav">
-                        <li><a href="/" class="current" title="#">ホーム</a></li>
-                        <li><a href="page_1.html" title="#">人材総合支援事業</a></li>
-                        <li><a href="page_2.html" title="#">食品製造販売事業</a></li>
-                        <li><a href="page_3.html" title="#">会社案内</a></li>
+                        <li><a href="{{route('home')}}" class='{{$active=="home"?"current":""}}' title="ホーム">ホーム</a></li>
+                        <li><a href="{{route('human')}}" class='{{$active=="human"?"current":""}}'  title="人材総合支援事業">人材総合支援事業</a></li>
+                        <li><a href="{{route('sweets')}}" title="食品製造販売事業">食品製造販売事業</a></li>
+                        <li><a href="{{route('company')}}" title="会社案内">会社案内</a></li>
                     </ul>
                     <!-- /gNaviWrap -->
                 </nav>

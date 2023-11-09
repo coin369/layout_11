@@ -17,7 +17,8 @@ class PageController extends AppController
         $this->View['data']=[];
         if($request->isMethod("post")){
             $Validator=Validator::make($request->all(),[
-                    "name"=>"required|unique:ca_page"
+                    "name"=>"required|unique:ca_page",
+                     "contents"=>"required"
             ]);
             if($Validator->fails()){
                 return redirect("/admin/page/add")->withErrors($Validator)->withInput();
@@ -28,7 +29,10 @@ class PageController extends AppController
                 $TNew->content=$request->input("contents");
                 $TNew->status='2';
                 $TNew->save();
-                $request->session()->flash("success","Thêm mới thành công.");
+
+                $TNew->alias=App\MrData::toAlias2(date("Y-m-d")."-". $TNew->id);
+                $TNew->save();
+                $request->session()->flash("success","Successfully");
                 return redirect()->back();
             }
         }
@@ -51,19 +55,21 @@ class PageController extends AppController
             $get_page=App\Models\Page::find($id);
             if($request->isMethod("post")){
                 $validator=Validator::make($request->all(),[
-                    "name"=>"required|unique:ca_page,name,{$id},id"
-                ],[
-                    "name.required"=>"Vui lòng nhập tên trang",
-                    "name.unique"=>" Tên trang đã tồn tại "
+                    "name"=>"required|unique:ca_page,name,{$id},id",
+                    "contents"=>"required"
                 ]);
                 if($validator->fails()){
                     return redirect()->back()->withErrors($validator)->withInput();
                 }else{
                     $get_page->name=$request->input("name");
-                    $get_page->alias=App\MrData::toAlias2($get_page->name);
+                   
                     $get_page->content=$request->input("contents");
                     $get_page->save();
-                    $request->session()->flash("success"," Cập nhật trang thành công. ");
+
+                    
+
+
+                    $request->session()->flash("success","Successfully");
                     return redirect()->back();
                 }
            }

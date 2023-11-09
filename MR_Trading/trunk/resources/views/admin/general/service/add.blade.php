@@ -144,8 +144,8 @@
                                        
                                             <div class="card-footer">
                                                
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> LƯU </button>
-                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> LÀM LẠI </button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset </button>
                                             </div>
                                         </div>
 

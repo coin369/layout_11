@@ -54,12 +54,6 @@ Route::group(["namespace"=>"App\Http\Controllers\Admin","prefix"=>"admin","middl
 			});
 
 			
-			Route::group(['prefix'=>'newsletter'],function(){
-				Route::any('/index','NewsletterController@index');
-				Route::post('/remove','NewsletterController@remove');
-				Route::any('/export','NewsletterController@export');
-				
-			});
 			Route::group(['prefix'=>'news'],function(){
 				Route::any('/add','NewsController@add');
 				Route::any("/lists","NewsController@lists");

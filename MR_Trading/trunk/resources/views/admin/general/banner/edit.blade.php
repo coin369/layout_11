@@ -12,22 +12,7 @@
 
 
         <div class="container-fluid">
-            @if(count($errors)>0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>
-                                    {{$error}}
-                            </li>
-                        @endforeach
-                    </ul>
-                    </div> 
-            @endif
-            @if(!empty(session('success')))
-                <div class='alert alert-primary'>
-                    {{session('success')}}
-                </div>
-            @endif
+            
            {!! Form::open(['method'=>'post','files'=>true]) !!}
                 
             <div class="col-sm-12">
@@ -43,7 +28,7 @@
                                             <div class="col-sm-10">
                                                 <div class="form-group">
                                                     <label for="name">Tên    </label>
- {!! Form::text('name',@$data['name'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Nhập..."  ]) !!}
+ {!! Form::text('name',@$data['name'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Input..."  ]) !!}
     <span style="color:red">*</span>
                                                     
                                                  
@@ -180,8 +165,8 @@
                                        
                                             <div class="card-footer">
                                                
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> LƯU </button>
-                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> LÀM LẠI </button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save </button>
+                                             
                                             </div>
                                         </div>
 
@@ -192,6 +177,18 @@
              </div>
     @endsection
     @section('script_js') 
+     <script type="module"> 
+            @if(count($errors)>0)
+                
+                        @foreach($errors->all() as $error)
+                            window.toastr.error("{{$error}}");
+                        @endforeach
+                    
+            @endif
+            @if(!empty(session('success')))
+                window.toastr.success("{{session('success')}}");
+            @endif
+            </script>
         <script type="text/javascript">
              document.getElementById('banner_name').addEventListener('change', handleFileSelectBanner, false);
         </script>

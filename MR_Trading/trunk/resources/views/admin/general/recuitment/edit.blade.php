@@ -34,7 +34,7 @@
             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Thông tin Tuyển dụng     </strong>
+                                        <strong> Information   </strong>
                                         <small>Form</small>
                                     </div>
                                     <div class="card-body">
@@ -43,8 +43,8 @@
                                            
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <label for="name">Tên    </label>
- {!! Form::text('name',@$data['name'],['class'=>"form-control ", "placeholder"=>"Nhập..."  ]) !!}
+                                                    <label for="name"> Name     </label>
+ {!! Form::text('name',@$data['name'],['class'=>"form-control ", "placeholder"=>"Input..."  ]) !!}
     <span style="color:red">*</span>
                                                     
                                                  
@@ -131,8 +131,8 @@
                                        
                                             <div class="card-footer">
                                                
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> LƯU </button>
-                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> LÀM LẠI </button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset </button>
                                             </div>
                                         </div>
 

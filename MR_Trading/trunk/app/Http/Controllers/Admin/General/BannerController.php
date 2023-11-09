@@ -27,10 +27,7 @@ class BannerController extends AppController
                 "name"=>"required",
                 "picture"=>"required",
                 "links"=>"required"
-            ],[
-                "name.required"=>"Vui lòng nhập tên",
-                'picture.required'=>"Vui lòng nhập hình banner",
-                "links.required"=>" Vui lòng nhập đường dẫn "
+           
             ]);
             if($validator->fails()){
                 return redirect("/admin/banner/add")->withErrors($validator)->withInput();
@@ -38,8 +35,7 @@ class BannerController extends AppController
                 $TNew=new DTBanner();
                 $TNew->name=$request->input("name");
                 $TNew->links=$request->input("links");
-                $TNew->position=$request->input("position");
-
+                $TNew->position=1;
 
                 $picture=$request->file("picture");
                 $name_picture="banner_".time().".".$picture->getClientOriginalExtension();
@@ -47,20 +43,14 @@ class BannerController extends AppController
             
 
                 Image::make($picture)
-                            ->save(public_path("/upload/banner/big_".$name_picture));
+                            ->save(public_path("/upload/banner/".$name_picture));
 
-                 Image::make($picture)->resize(
-                            config('constants.Banner.Small.Width'),
-                            config('constants.Banner.Small.Height'))
-                 ->save(public_path("/upload/banner/small_".$name_picture));
-
+                
 
                 $TNew->picture=$name_picture;
 
-                $TNew->is_type=$request->input("is_type");
-                $TNew->status=$request->input("status");
                 $TNew->save();
-                $request->session()->flash("success"," Thêm mới banner thành công ");
+                $request->session()->flash("success","Successfully");
                 return redirect("/admin/banner/add");
             }
         }
@@ -100,12 +90,8 @@ class BannerController extends AppController
                 if($request->isMethod("post")){
                     $validator=Validator::make($request->all(),[
                         "name"=>"required",
-                      
-                        "links"=>"required"
-                    ],[
-                        "name.required"=>"Vui lòng nhập tên",
                         
-                        "links.required"=>" Vui lòng nhập đường dẫn "
+                        "links"=>"required"
                     ]);
                     if($validator->fails()){
                         return redirect("/admin/banner/edit/".$id)->withErrors($validator)->withInput();
@@ -113,7 +99,7 @@ class BannerController extends AppController
                       
                         $TUpdate->name=$request->input("name");
                         $TUpdate->links=$request->input("links");
-                        $TUpdate->position=$request->input("position",1);
+                        $TUpdate->position=1;
 
 
                         $picture=$request->file("picture");
@@ -121,40 +107,24 @@ class BannerController extends AppController
                             $name_picture="banner_".time().".".$picture->getClientOriginalExtension();
 
 
-                           /* if(in_array($request->input('is_type'),['5','6','7'])){
-                                Image::make($picture)->resize(242,114)->save(public_path("/upload/banner/".$name_picture));
-                            }else{
-                               if(in_array($request->input('is_type'),['1','2'])){
-                                    Image::make($picture)->resize(560,166)->save(public_path("/upload/banner/".$name_picture));
-                                }else{
-                                    Image::make($picture)->resize(560,344)->save(public_path("/upload/banner/".$name_picture));
-                                 
-                                }
-                            }
-                            resize(354,150)*/
                           
 
                                  Image::make($picture)
                                     ->save(public_path("/upload/banner/big_".$name_picture));
 
-                 Image::make($picture)->resize(
-                            config('constants.Banner.Small.Width'),
-                            config('constants.Banner.Small.Height'))
-                 ->save(public_path("/upload/banner/small_".$name_picture));
-
+             
                             $TUpdate->picture=$name_picture;
                         }
 
-                        $TUpdate->is_type=$request->input("is_type");
-                        $TUpdate->status=$request->input("status");
+                   
                         $TUpdate->save();
-                        $request->session()->flash("success"," Cập nhật banner thành công ");
+                        $request->session()->flash("success","Successfully");
                         return redirect("/admin/banner/edit/".$id);
                     }
                 
                  }
                 $data['status']=$TUpdate['status'];
-               $data['links']=$TUpdate['links'];
+                $data['links']=$TUpdate['links'];
                 $data['name']=$TUpdate['name'];
                  $data['position']=$TUpdate['position'];
                   $data['is_type']=$TUpdate['is_type'];

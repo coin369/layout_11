@@ -11,7 +11,7 @@
     <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
     <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
 
-    <title>BACKEND </title>
+    <title>LOGIN  </title>
 
     <!-- Icons -->
     <link href="{{asset(PUBLIC_URL.'admin/admin/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -44,8 +44,8 @@
                         @endif
                         {!! Form::open(['method'=>'post'])!!}
                         <div class="card-block">
-                            <h1>Đăng nhập</h1>
-                            <p class="text-muted">Đăng nhập </p>
+                          
+                            <p class="text-muted">  </p>
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="icon-user"></i>
                                 </span>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <button type="submit" class="btn btn-primary px-4">Đăng nhập</button>
+                                    <button type="submit" class="btn btn-primary px-4"> Login </button>
                                 </div>
                                 <div class="col-6 text-right">
                                   

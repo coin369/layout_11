@@ -42,7 +42,7 @@
                                             <div class="col-sm-10">
                                                 <div class="form-group">
                                                     <label for="name"> Đường dẫn     </label>
- {!! Form::text('links',@$data['links'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Nhập..."  ]) !!}
+ {!! Form::text('links',@$data['links'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Input..."  ]) !!}
     <span style="color:red">*</span>
                                                     
                                                  
@@ -67,7 +67,7 @@
                                             <div class="col-sm-10">
                                                 <div class="form-group">
                                                     <label for="name"> Description   </label>
- {!! Form::textarea('description',@$data['description'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Nhập..."  ]) !!}
+ {!! Form::textarea('description',@$data['description'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Input..."  ]) !!}
     <span style="color:red">*</span>
                                                     
                                                  
@@ -96,8 +96,8 @@
                                        
                                             <div class="card-footer">
                                                
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> LƯU </button>
-                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> LÀM LẠI </button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset </button>
                                             </div>
                                         </div>
 

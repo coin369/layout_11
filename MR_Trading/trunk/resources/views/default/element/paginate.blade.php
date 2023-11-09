@@ -1,21 +1,20 @@
-
-
+ <div class="pagination-bx clearfix text-center">
+                              
                                    
 @if ($paginator->hasPages())
-    <ul class="pagination">
+     <ul class="pagination text-center">
+        {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-             <li class="disabled previous">
-                 <a href="javascript:;" title="Trang trước" rel="nofollow">
-                         <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-                 </a>
-        </li>
+             <li class="page-item disabled previous"><a href="javascript:;" title="Trang trước" rel="nofollow">
+            <<
+           </a></li>
               
 @else
-             <li class="previous" >
+             <li class="page-item previous" >
                       <a rel="prev" href="{{ $paginator->previousPageUrl() }}" title="Trang trước" rel="nofollow">
-                              <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                         <<
                       </a>
-             </li>
+                                                </li>
 
            
 @endif
@@ -24,7 +23,7 @@
 @foreach ($elements as $element)
 
     @if (is_string($element))
-            <li class="active">
+            <li class=" page-item active">
                 <a class="current_page" href="javascript:;" title="{{ $element }}  " rel="nofollow">{{ $element }}</a>
             </li>
     @endif
@@ -33,11 +32,11 @@
     @if (is_array($element))
         @foreach ($element as $page => $url)
                 @if ($page == $paginator->currentPage())
-                        <li class="active">
+                        <li class=" page-item active">
                             <a class="current_page" href="javascript:;" rel="nofollow"><span>{{ $page }}</span></a>
                         </li>
                 @else
-                        <li>
+                        <li class="page-item">
                             <a href="{{ $url }}" title="{{ $page }} " rel="nofollow">
                                {{ $page }}
                             </a>
@@ -51,16 +50,16 @@
         @if ($paginator->hasMorePages())
            
 
-                  <li class="next">
-                                        <a rel="next" href="{{ $paginator->nextPageUrl() }}" title="trang sau">
-                                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                  <li class="page-item next">
+                                                    <a rel="next" href="{{ $paginator->nextPageUrl() }}" title="trang sau">
+                                                           >>
                                                     </a>
                                                 </li>
         @else
 
-                    <li class="disabled next">
+                    <li class="page-item disabled next">
                                                     <a rel="next" href="javascript:;" title="trang sau">
-                                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                                       >>
                                                     </a>
                                                 </li>
               
@@ -68,4 +67,5 @@
     </ul>
     @endif
 
-                                      
+                            </div>
+                                 

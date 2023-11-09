@@ -48,9 +48,6 @@ class LoginController extends Controller
         $validator=Validator::make($request->all(),[
                 "username"=>"required",
                 "password"=>"required"
-        ],[
-                "username.required"=>"Vui lòng nhập tên đăng nhập ",
-                "password.required"=>"Vui lòng nhập mật khẩu "
         ]);
         if($validator->fails()){
             return redirect("/login")->withErrors($validator)->withInput();

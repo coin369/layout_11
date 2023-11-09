@@ -1,8 +1,10 @@
 @extends("admin.admin")
  @section('content')
 
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"> Banner chủ </li>
+              <ol class="breadcrumb">
+                 <li class="breadcrumb-item"> 
+                        <a href="/" target="_black">Home </a>
+                 </li>
                 <li class="breadcrumb-item"><a href=""> Banner      ({{$data_list->total()}})  </a>
                 </li>
                
@@ -11,35 +13,30 @@
 
 
         <div class="container-fluid">
-            {!! Form::open(['method'=>'get']) !!}
-
-               <div class="col-sm-10">
-                                                <div class="form-group">
-                                                    <label for="name">Tìm kiếm thông tin   </label>
- {!! Form::text('search',@$search,['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Nhập tên Banner      ..."  ]) !!}
-  <button type="submit" class="btn btn-sm btn-warning"><i class="fa fa-ban"></i> TÌM KIẾM  </button>
-                                                </div>
-                                            </div>
-            {!! Form::close()!!}
-
+           
+            <div class="text-right">
+                <a href="/admin/banner/add" class="text-right" style="text-align: right;">
+                   <i  style="font-size: 80px;" class="fa fa-plus-circle"></i>
+                </a>
+            </div>
 
 <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> Banner      ( {{$data_list->total()}} )
+                                    <i class="fa fa-align-justify"></i> Banner     ( {{$data_list->total()}} )
                                 </div>
                                 <div class="card-block">
                                     <table class="table table-sm">
                                         <thead>
                                             <tr>
                                                 <th>ID </th>
-                                                <th>Tên Trang       </th>
-                                                <th> Đường dẫn  </th>
+                                                <th> Name </th>
+                                                <th> Link  </th>
                                             
                                                 <th> Picture  </th>
                                               
-                                                <th> Tuỳ chọn </th>
+                                                <th> Option </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -63,14 +60,14 @@
                                                         </td>
                                                        
                                                 <td>
-                                                        <img src="/<?=PUBLIC_URL?>upload/banner/small_{{$list['picture']}}" style='width:'/>
+                                                        <img class="img-thumbnail " src="/<?=PUBLIC_URL?>upload/banner/{{$list['picture']}}" style='width:150px'/>
                                                 </td>
                                                 </td>
                                                 
                                                 
                                                 <td>
-                                                    <a class="btn btn-sm btn-success" href='/admin/banner/edit/<?php echo $list['id'];?>'><i class="fa fa-edit"></i> Sửa </a>
-                                                    <a class="btn btn-sm btn-danger click_remove" href='/admin/banner/remove?id=<?php echo $list['id'];?>&_token={{ csrf_token() }}'> <i class="fa fa-remove"></i> Xoá  </a>
+                                                    <a class="btn btn-sm btn-success" href='/admin/banner/edit/<?php echo $list['id'];?>'><i class="fa fa-edit"></i>  </a>
+                                                    <a class="btn btn-sm btn-danger click_remove" href='/admin/banner/remove?id=<?php echo $list['id'];?>&_token={{ csrf_token() }}'> <i class="fa fa-remove"></i>   </a>
                                                 </td>
 
                                             </tr>

@@ -5,7 +5,7 @@
                  <li class="breadcrumb-item"> 
                         <a href="/" target="_black">Home </a>
                  </li>
-                <li class="breadcrumb-item"><a href=""> Banner      ({{$data_list->total()}})  </a>
+                <li class="breadcrumb-item"><a href=""> Slideshow   ({{$data_list->total()}})  </a>
                 </li>
                
               
@@ -15,6 +15,11 @@
         <div class="container-fluid">
            
 
+            <div class="text-right">
+                <a href="/admin/slideshow/add" class="text-right" style="text-align: right;">
+                   <i  style="font-size: 80px;" class="fa fa-plus-circle"></i>
+                </a>
+            </div>
 
 <div class="row">
                         <div class="col-lg-12">

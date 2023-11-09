@@ -3,52 +3,38 @@
 
 
 
-    <main>
-        <div class="ps-categogy">
-            <section class="project-ask project-ask-news">
-                <div class="container">
-                    <div class="pro-ask-content">
-                        <h2 data-aos="slide-in-left">Tin tức cập nhật</h2>
-
-                    </div>
+    <section class="main_section">
+             <section class="pos_top">
+                @include("default.element.slideshow")
+                <div class="main-visual-sweets__text">
+                    <h1 class="main-visual-sweets__title">お知らせ<span>INFORMATION</span></h1>
                 </div>
             </section>
-            <div class="container">
-                <ul class="ps-breadcrumb">
-                    <li class="ps-breadcrumb__item"><a href="/" title="#">Trang chủ</a>/</li>
-                    <li class="ps-breadcrumb__item"><a href="javascript:;" title="#"><b>Tin tức </b></a></li>
+            <div id="breadcrumbList">
+                <ul>
+                    <li><a href="{{route('home')}}" title="ホーム">ホーム</a></li>
+                    <li>お知らせ</li>
                 </ul>
             </div>
-            <div class="container">
-                <div class="row">
-                  
-
-                     @include("default.news.sidebar")
-
-                    <div class="col-lg-9 col-md-12 box_frist">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 box_top_cate box_top_cate_news">
-                                <h1 class="ps-categogy__name">TIN TỨC SƠN CÔNG NGHIỆP</h1>
-
-                            </div>
-                        </div>
-                        <div class="row box_product box_product_news">
-                                @foreach($TNews as $news)
+            <div id="contents" class="main-contents">
+                <div id="main" class="main-contents__inner infox_3">
+                    <article class="main-article message">
+                        <section id="content" class="wow bounceInDown infox infox_2" data-wow-duration="1s" data-wow-delay="1s">
+                            <section class="pageTitle">
+                                <div class="pageTitleIn">
+                                    <h2>INFORMATION<span>お知らせ</span></h2>
+                                </div>
+                            </section>
+                            <div id="mainContents">
+                                @foreach($TNews as $news):
                                         @include("default.element.news.news")
                                 @endforeach
-                            
-                           
-                        </div>
-                        <div class="ps-pagination">
-                          
-                             {!!$TNews->links("default.element.paginate")!!}
-                        </div>
-
-                    </div>
+                            </div>
+                             @include("default.news.sidebar")   
+                        </section>
+                    </article>
                 </div>
             </div>
-        </div>
-    </main>
-        
-         @include("default.main.youtube")
+        </section>
+        @include("default.element.contact")
 @endsection

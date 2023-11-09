@@ -23,7 +23,7 @@ class NewsController extends AppController
     protected $View=[];
     
     public function __construct(){
-       $this->View['is_side']='news';
+       $this->View['is_side']='general';
     }
     public function addcate(Request $request){
         $data=[];
@@ -32,16 +32,13 @@ class NewsController extends AppController
         if($request->isMethod("post")){
             $validator=Validator::make($request->all(),[
                 "name"=>"required|unique:ca_news_cate"
-            ],[
-                "name.required"=>"Vui lòng nhập tên danh mục tin tức",
-                   "name.unique"=>"Tên đã tồn tại "
             ]);
             if($validator->fails()){
                 return redirect()->back()->withErrors($validator)->withInput();
             }else{
                 $TNew=new DTNewsCate();
                 $TNew->name=$request->input("name");
-                $TNew->alias=App\MrData::toAlias2($request->input("name"));
+                $TNew->alias=App\MrData::toAlias2(date("Y-m-d"));
                 $TNew->status=$request->input("status");
                 $TNew->cid_parent=$request->input("cid_parent");
                  $TNew->seo=json_encode([
@@ -51,12 +48,15 @@ class NewsController extends AppController
                 ]);
 
                 $TNew->save();
-                $request->session()->flash("success","Thêm mới danh mục tin tức thành công. ");
+                $TNew->alias=App\MrData::toAlias2(date("Y-m-d")."-". $TNew->id);
+                $TNew->save();
+
+                $request->session()->flash("success","Successfully ");
                 return redirect()->back();
             }
         }
         $this->View['cid_parent']=DTNewsCate::where("cid_parent","0")->where("status",'1')->get()->pluck("name","id");
-        $this->View['cid_parent'][0]=" Danh mục tin tức chính ";
+        $this->View['cid_parent'][0]=" Categories ";
         $data['cid_parent']=0;
         $this->View['data']=$data;
         return view("admin.general.news.addcate",$this->View);
@@ -67,7 +67,7 @@ class NewsController extends AppController
             $search=$request->input("search");
         }
         $this->View['search']=$search;
-        $this->View['data_list']=DTNewsCate::where("name","LIKE","%$search%")->where("cid_parent","0")->orderBy("id","DESC")->paginate(20);
+        $this->View['data_list']=DTNewsCate::orderBy("id","DESC")->paginate(20);
         return view("admin.general.news.listscate",$this->View);
 
     }
@@ -94,16 +94,13 @@ class NewsController extends AppController
             if($request->isMethod("post")){
                 $validator=Validator::make($request->all(),[
                     "name"=>"required|unique:ca_news_cate,name,{$id},id"
-                ],[
-                    "name.required"=>"Vui lòng nhập tên ",
-                    "name.unique"=>"Tên đã tồn tại "
                 ]);
                 if($validator->fails()){
                     return redirect()->back()->withErrors($validator)->withInput();
                 }else{
                      $TUpdated=DTNewsCate::find($id);
                      $TUpdated->name=$request->input("name");
-                        $TUpdated->alias=App\MrData::toAlias2($request->input("name"));
+                        
                         $TUpdated->status=$request->input("status");
                         $TUpdated->cid_parent=$request->input("cid_parent");
                          $TUpdated->seo=json_encode([
@@ -114,7 +111,11 @@ class NewsController extends AppController
 
                       
                     $TUpdated->save();
-                    $request->session()->flash("success","Câp nhật danh mục tin tức thành công.");
+
+                   
+                   
+                    
+                    $request->session()->flash("success","Successfully");
                     return redirect()->back();
                 }
             }
@@ -140,21 +141,15 @@ class NewsController extends AppController
             $validator=Validator::make($request->all(),[
                 "name"=>"required|unique:ca_news",
                 "cid_cate"=>"required",
-                "description"=>"required",
-                "picture"=>"required"
-            ],[
-                 "name.required"=>"Vui lòng nhập tên tin tức",
-                   "name.unique"=>"Tin tức này đã tồn tại ",
-                   "cid_cate.required"=>"Vui lòng chọn danh mục tin tức",
-                   "description.required"=>"Vui lòng nhập mô tả ",
-                   "picture.required"=>"Vui lòng chọn hình ảnh tin tức "
+               
+                "content"=>"required"
             ]);
             if($validator->fails()){
                 return redirect("/admin/news/add")->withErrors($validator)->withInput();
             }else{
                 $TNew=new DTNews();
                 $TNew->name=$request->input("name");
-                $TNew->alias=App\MrData::toAlias2($request->input("name"));
+              
                 $TNew->description=$request->input("description");
               
                 $TNew->content=$request->input("content");
@@ -174,47 +169,28 @@ class NewsController extends AppController
                   if($picture){
                      $picture_name= $TNew->alias.".".$picture->getClientOriginalExtension();
 
-                         Image::make($picture)->resize(
-                                 config('constants.News.Current.Width'),config('constants.News.Current.Height'))
-                            ->save(public_path("/upload/news/".$picture_name));
+                         
+                            Image::make($picture)->save(public_path("/upload/news/".$picture_name));
 
-                       Image::make($picture)->resize(
-                                                      config('constants.News.Small.Width'),
-                                                      config('constants.News.Small.Height'))
-                              ->save(public_path("/upload/news/small/".$picture_name));
-
-                          Image::make($picture)->resize(
-                                    config('constants.News.Big.Width'),config('constants.News.Big.Height'))
-                                        ->save(public_path("/upload/news/big/".$picture_name));
-
-
-                       // Webp::make($picture)->resize(
-                       //           config('constants.News.Current.Width'),config('constants.News.Current.Height'))
-                       //      ->save(public_path("/upload/news/".$picture_name.".webp"));
-
-                       // Webp::make($picture)->resize(
-                       //                                config('constants.News.Small.Width'),
-                       //                                config('constants.News.Small.Height'))
-                       //        ->save(public_path("/upload/news/small/".$picture_name.".webp"));
-
-                       //    Webp::make($picture)->resize(
-                       //              config('constants.News.Big.Width'),config('constants.News.Big.Height'))
-                       //                  ->save(public_path("/upload/news/big/".$picture_name.".webp"));
+                      
 
                       
                     $TNew->picture=$picture_name;
 
                 }
 
+                $TNew->save();
+                $TNew->alias=App\MrData::toAlias2(date("Y-m-d")."-". $TNew->id);
+                $TNew->save();
                
 
                 if ($TNew->save()) {
                       //  var_dump($request->input("page"));exit;
-                        \SEO\Seo::save($TNew, route('news.cate',['alias'=>$TNew->alias]),
+                        \SEO\Seo::save($TNew, route('news.detail',['alias'=>$TNew->alias]),
                                [
                                    'title' => $TNew->name,
                                    'images' => [
-                                       asset("/public/upload/news/big/".$TNew->picture)
+                                       asset("/upload/news/".$TNew->picture)
                                    ]
                                ]
                         );
@@ -222,55 +198,18 @@ class NewsController extends AppController
 
 
 
-                 $tag=explode(",", $request->input("tag"));
-                if(!empty($tag)){
-                    $tag=array_unique($tag);
-                      foreach ($tag as $e_tag) {
-                          $alias_e_tag=App\MrData::toAlias2($e_tag);
+               
 
-                          $check_tag=DTTag::where("alias",$alias_e_tag)->first();
-                          if(empty($check_tag['id'])){
-                             $check_tag=new DTTag();
-                             $check_tag->name = $e_tag;
-                             $check_tag->alias=$alias_e_tag;
-                             $check_tag->save();
-
-                            
-                          }
-                           $check_tag->News()->attach($TNew->id);
-                      }
-                }
-
-
-
-                $request->session()->flash("success","Thêm mới tin tức thành công. ");
+                $request->session()->flash("success","Successfully ");
                 return redirect()->back();
             }
         }
-        $this->View['cid_cate']= DTNewsCate::orderBy("name","DESC")->where("cid_parent","!=",0)->pluck("name",'id');
+        $this->View['cid_cate']= DTNewsCate::orderBy("name","DESC")->pluck("name",'id');
         $this->View['data']=$data;
         return view("admin.general.news.add",$this->View);
     }
      public function lists(Request $request){
 
-        if(isset($_GET['id'])){
-                $id=$_GET['id'];
-                $n=DTNews::find($id);
-                if(!empty($n)){
-                        $product =new \App\Models\Product();
-                        $product->name=$n->name;
-                        $product->alias=$n->slug;
-                        $product->cid_cate=3;
-                        $product->content=$n->content;
-                        $product->status='1';
-                        $product->save();
-                        $n->delete();
-                        
-
-
-                }
-
-        }
         $search="";
         if($request->isMethod("get")){
             $search=$request->input("search");
@@ -299,20 +238,14 @@ class NewsController extends AppController
                 $validator=Validator::make($request->all(),[
                         "name"=>"required|unique:ca_news,name,{$id},id",
                         "cid_cate"=>"required",
-                        "description"=>"required",
+                        "content"=>"required",
                      
-                    ],[
-                         "name.required"=>"Vui lòng nhập tên tin tức",
-                           "name.unique"=>"Tin tức này đã tồn tại ",
-                           "cid_cate.required"=>"Vui lòng chọn danh mục tin tức",
-                           "description.required"=>"Vui lòng nhập mô tả ",
-                           
                     ]);
                 if($validator->fails()){
                     return redirect()->back()->withErrors($validator)->withInput();
                 }else{
                     $TUpdated->name=$request->input("name");
-                    $TUpdated->alias=App\MrData::toAlias2($request->input("name"));
+                   
                     $TUpdated->description=$request->input("description");
                   
                     $TUpdated->content=$request->input("content");
@@ -335,46 +268,26 @@ class NewsController extends AppController
                                      config('constants.News.Current.Width'),config('constants.News.Current.Height'))
                                 ->save(public_path("/upload/news/".$picture_name));
 
-                           Image::make($picture)->resize(
-                                                          config('constants.News.Small.Width'),
-                                                          config('constants.News.Small.Height'))
-                                  ->save(public_path("/upload/news/small/".$picture_name));
+                           
 
-                              Image::make($picture)->resize(
-                                        config('constants.News.Big.Width'),config('constants.News.Big.Height'))
-                                            ->save(public_path("/upload/news/big/".$picture_name));
-                        
-
-                       //   Webp::make($picture)->resize(
-                       //           config('constants.News.Current.Width'),config('constants.News.Current.Height'))
-                       //      ->save(public_path("/upload/news/".$picture_name.".webp"));
-
-                       // Webp::make($picture)->resize(
-                       //                                config('constants.News.Small.Width'),
-                       //                                config('constants.News.Small.Height'))
-                       //        ->save(public_path("/upload/news/small/".$picture_name.".webp"));
-
-                       //    Webp::make($picture)->resize(
-                       //              config('constants.News.Big.Width'),config('constants.News.Big.Height'))
-                       //                  ->save(public_path("/upload/news/big/".$picture_name.".webp"));
-
-
+                   
 
                         $TUpdated->picture=$picture_name;
 
                    }
 
-                   // $TUpdated->save();
+                $TUpdated->save();
+                
 
                  
                     if ($TUpdated->save()) {
                       //  var_dump($request->input("page"));exit;
-                        \SEO\Seo::save($TUpdated, route('news.cate',['alias'=>$TUpdated->alias]),
+                        \SEO\Seo::save($TUpdated, route('news.detail',['alias'=>$TUpdated->alias]),
 
                         [
                            'title' => $TUpdated->name,
                            'images' => [
-                               asset("/public/upload/news/big/".$TUpdated->picture)
+                               asset("/upload/news/".$TUpdated->picture)
                            ]
                        ]
                         );
@@ -384,27 +297,9 @@ class NewsController extends AppController
                           $TUpdated->MyTag()->detach($t->id);
                    }                  
 
-                    $tag=explode(",", $request->input("tag"));
-                  if(!empty($tag)){
-                    $tag=array_unique($tag);
-                        foreach ($tag as $e_tag) {
-                            $alias_e_tag=App\MrData::toAlias2($e_tag);
+                 
 
-                            $check_tag=DTTag::where("alias",$alias_e_tag)->first();
-                            if(empty($check_tag['id'])){
-                               $check_tag=new DTTag();
-                               $check_tag->name = $e_tag;
-                               $check_tag->alias=$alias_e_tag;
-                               $check_tag->save();
-
-                              
-                            }
-
-                             $check_tag->News()->attach($TUpdated->id);
-                        }
-                  }
-
-                    $request->session()->flash("success","Câp nhật danh mục tin tức thành công.");
+                    $request->session()->flash("success","Successfully.");
                     return redirect()->back();
                 }
             }

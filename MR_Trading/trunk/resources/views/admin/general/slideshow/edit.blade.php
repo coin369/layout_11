@@ -5,7 +5,7 @@
                 <li class="breadcrumb-item"> 
                         <a href="/" target="_black">Home </a>
                  </li>
-                <li class="breadcrumb-item"><a href="/admin/slideshow/lists">  Banner     </a>
+                <li class="breadcrumb-item"><a href="/admin/slideshow/lists">  Slideshow     </a>
                 </li>
 
                  <li class="breadcrumb-item"> {{$data['name']}} </li>
@@ -13,22 +13,7 @@
 
 
         <div class="container-fluid">
-                     @if(count($errors)>0)
-                        <div class='alert alert-danger'>
-                            <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>
-                                                {{$error}}
-                                        </li>
-                                    @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    @if(!empty(session('success')))
-                    <div class='alert alert-primary'>
-                                {{session('success')}}
-                        </div>
-                    @endif
+                  
            {!! Form::open(['method'=>'post','files'=>true]) !!}
                     @if(!empty($success))
                     <div class="col-sm-12 col-md-12">
@@ -55,7 +40,7 @@
                                             <div class="col-sm-10">
                                                 <div class="form-group">
                                                     <label for="name">Tên  </label>
- {!! Form::text('name',@$data['name'],['class'=>"form-control ", "placeholder"=>"Nhập..."  ]) !!}
+ {!! Form::text('name',@$data['name'],['class'=>"form-control ", "placeholder"=>"Input..."  ]) !!}
     <span style="color:red">*</span>
                                                   
                                                 </div>
@@ -65,7 +50,7 @@
                                             <div class="col-sm-10">
                                                 <div class="form-group">
                                                     <label for="name">Links   </label>
- {!! Form::text('links',@$data['links'],['class'=>"form-control ", "placeholder"=>"Nhập..."  ]) !!}
+ {!! Form::text('links',@$data['links'],['class'=>"form-control ", "placeholder"=>"Input..."  ]) !!}
     <span style="color:red">*</span>
                                                    
                                                 </div>
@@ -116,8 +101,8 @@
                                        
                                             <div class="card-footer">
                                                
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> LƯU </button>
-                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> LÀM LẠI </button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset </button>
                                             </div>
                                         </div>
 
@@ -128,6 +113,18 @@
              </div>
     @endsection
     @section('script_js') 
+     <script type="module"> 
+            @if(count($errors)>0)
+                
+                        @foreach($errors->all() as $error)
+                            window.toastr.error("{{$error}}");
+                        @endforeach
+                    
+            @endif
+            @if(!empty(session('success')))
+                window.toastr.success("{{session('success')}}");
+            @endif
+            </script>
         <script type="text/javascript">
              document.getElementById('banner_name').addEventListener('change', handleFileSelectBanner, false);
         </script>

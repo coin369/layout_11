@@ -5,7 +5,7 @@
                 <li class="breadcrumb-item"> 
                         <a href="/" target="_black">Home </a>
                  </li>
-                <li class="breadcrumb-item"><a href=""> Add new Banner     </a>
+                <li class="breadcrumb-item"><a href=""> Add new Slideshow     </a>
                 </li>
                
               
@@ -13,22 +13,7 @@
 
 
         <div class="container-fluid">
-                    @if(count($errors)>0)
-                        <div class='alert alert-danger'>
-                            <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>
-                                                {{$error}}
-                                        </li>
-                                    @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    @if(!empty(session('success')))
-                    <div class='alert alert-primary'>
-                                {{session('success')}}
-                        </div>
-                    @endif
+                   
 
            {!! Form::open(['method'=>'post','files'=>true]) !!}
                     @if(!empty($success))
@@ -126,7 +111,19 @@
 
              </div>
     @endsection
-    @section('script_js') 
+     @section('script_js') 
+     <script type="module"> 
+            @if(count($errors)>0)
+                
+                        @foreach($errors->all() as $error)
+                            window.toastr.error("{{$error}}");
+                        @endforeach
+                    
+            @endif
+            @if(!empty(session('success')))
+                window.toastr.success("{{session('success')}}");
+            @endif
+            </script>
         <script type="text/javascript">
              document.getElementById('banner_name').addEventListener('change', handleFileSelectBanner, false);
         </script>

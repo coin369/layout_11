@@ -45,4 +45,9 @@ class User extends Authenticatable
       protected $table="ca_users";
     protected $primary="id";
     protected $timestamp=true;
+    public function isSuperAdmin()
+    {
+        return true;
+        // code...
+    }
 }

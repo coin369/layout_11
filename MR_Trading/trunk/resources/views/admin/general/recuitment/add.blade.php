@@ -42,7 +42,7 @@
                                             <div class="col-sm-10">
                                                 <div class="form-group">
                                                     <label for="name">Tên    </label>
- {!! Form::text('name',@$data['name'],['class'=>"form-control ", "placeholder"=>"Nhập..."  ]) !!}
+ {!! Form::text('name',@$data['name'],['class'=>"form-control ", "placeholder"=>"Input..."  ]) !!}
     <span style="color:red">*</span>
                                                     
                                                  
@@ -129,8 +129,8 @@
                                        
                                             <div class="card-footer">
                                                
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> LƯU </button>
-                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> LÀM LẠI </button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset </button>
                                             </div>
                                         </div>
 

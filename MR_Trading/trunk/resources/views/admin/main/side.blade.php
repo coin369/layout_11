@@ -16,6 +16,3 @@
 @if($is_side=='news')
         @include("admin.main.side.news")
 @endif
-@if($is_side=='info')
-        @include("admin.main.side.info")
-@endif

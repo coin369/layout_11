@@ -69,7 +69,7 @@ class IndexController extends AppController
       }
        
         
-       
+      
 
     
       $this->View['TNews']=DTNews::where('status','1')->limit(4)->orderBy("id","DESC")->get();

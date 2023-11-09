@@ -29,4 +29,9 @@ class Users extends Model
     public function Order(){
         return $this->hasMany(Order::class,"cid_user")->getResults();
     }
+     public function isSuperAdmin()
+    {
+        return true;
+        // code...
+    }
 }

@@ -20,6 +20,7 @@
     <link href="{{asset(PUBLIC_URL.'admin/admin/css/style.css')}}" rel="stylesheet">
 
 
+     @vite(['resources/assets/css/backend.scss', 'resources/assets/js/backend.js'])
    
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -54,13 +55,14 @@
     <script type="text/javascript" src="{{asset(PUBLIC_URL.'admin/ckeditor/ckeditor.js')}}"></script>
     <script type="text/javascript" src="{{asset(PUBLIC_URL.'admin/ckeditor/function.js')}}"></script>
 
+      <script  src='<?= asset(PUBLIC_URL."admin/admin.js")?>'>
+       
+    </script>
 
     @include("admin.main.footer")
 
 
-     <script  src='<?= asset(PUBLIC_URL."admin/admin.js")?>'>
-       
-    </script>
+   
     
 </body>
 

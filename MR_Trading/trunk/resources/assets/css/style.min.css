@@ -1948,7 +1948,9 @@ img {
 }
 
 #sideContents .tabControl li a {
-    width: 100%;
+        width: 100%;
+    color: black;
+    border-bottom: solid 2px #000;
 }
 
 #sideContents .tabControl li {

@@ -13,12 +13,9 @@
 // error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 // ini_set('display_errors', 0);
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 // Development
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 /*============================ General Settings =======================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html
@@ -35,8 +32,8 @@ $config['authentication'] = function () {
 /*============================ License Key ============================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
-$config['LicenseName'] = '';
-$config['LicenseKey'] = 'W8D8FX5LVTV2EWX1SYG71HNJTKEDV';
+$config['licenseName'] = '';
+$config['licenseKey']  = '';
 
 /*============================ CKFinder Internal Directory ============================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_privateDir
@@ -65,11 +62,17 @@ $config['images'] = array(
 
 /*=================================== Backends ========================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_backends
+$config_url=$_SERVER["SERVER_NAME"].'';
+if( isset($_SERVER['HTTPS'] ) ) {
+    $baseUrl = 'https://'.$config_url.'/upload/user_upload/';
+}else{
+    $baseUrl = 'http://vangdecor.local/upload/user_upload/';
+}
 
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
-    'baseUrl'      => '/public/upload/user_upload/',
+    'baseUrl'      => $baseUrl,
 //  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
@@ -79,7 +82,7 @@ $config['backends'][] = array(
 /*================================ Resource Types =====================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_resourceTypes
 
-$config['defaultResourceTypes'] = '';
+$config['defaultResourceTypes'] = 'Images';
 
 $config['resourceTypes'][] = array(
     'name'              => 'Files', // Single quotes not allowed.

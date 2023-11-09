@@ -20,6 +20,11 @@
     position: relative;
     width: 10px;
  }
+ #headingOne .row{
+   line-height: 22px;
+    height: 44px;
+    padding-top: 13px;
+ }
  .app-footer{
       float: left;
     position: relative;
