@@ -22,7 +22,7 @@
                             <div class="wp-block-group__inner-container">
                                 <section class="pageTitle">
                                     <div class="pageTitleIn">
-                                        <h2>{{$page['name']}}</h2>
+                                        <div class="h2">{{$page['name']}}</div>
                                     </div>
                                 </section>
                                 <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow" style="opacity: 1; visibility: inherit; transform: translate(0px, 0px);">

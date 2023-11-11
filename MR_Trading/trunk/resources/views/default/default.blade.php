@@ -42,7 +42,7 @@
           @endif
 
       
-    <link href="{{asset('/img/favicon.ico')}}" rel="shortcut icon">
+    <link href="{{asset('/frontend/img/favicon.ico')}}" rel="shortcut icon">
   
   @vite(['resources/assets/css/app.scss' , 'resources/assets/js/app.js'])
 

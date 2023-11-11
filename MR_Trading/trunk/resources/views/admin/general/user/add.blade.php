@@ -2,8 +2,8 @@
  @section('content')
 
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"> Trang chủ </li>
-                <li class="breadcrumb-item"><a href=""> Thêm mới người dùng      </a>
+                <li class="breadcrumb-item"> Home  </li>
+                <li class="breadcrumb-item"><a href=""> Add user      </a>
                 </li>
                
               
@@ -33,7 +33,7 @@
             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Thông tin      </strong>
+                                        <strong> Information     </strong>
                                         <small>Form</small>
                                     </div>
                                     <div class="card-body">
@@ -42,7 +42,7 @@
                                            
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <label for="name">Họ và Tên  </label>
+                                                    <label for="name"> Name  </label>
  {!! Form::text('name',@$data['name'],['class'=>"form-control ", "placeholder"=>""  ]) !!}
     <span style="color:red">*</span>
                                                     
@@ -63,7 +63,7 @@
 
                                              <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <label for="name">Số điện thoại  </label>
+                                                    <label for="name"> Phone </label>
  {!! Form::text('phone',@$data['phone'],['class'=>"form-control ", "placeholder"=>""  ]) !!}
     <span style="color:red">*</span>
                                                     
@@ -72,17 +72,6 @@
                                             </div>
 
 
-                                             <div class="col-sm-10">
-                                                <div class="form-group">
-                                                    <label for="name">Địa chỉ  </label>
- {!! Form::text('address',@$data['address'],['class'=>"form-control ", "placeholder"=>""  ]) !!}
-    
-                                                    
-                                                   
-                                                </div>
-                                            </div>
-
-                                             
 
 
                                              
@@ -101,7 +90,7 @@
                              <div class="col-sm-12">
                                     <div class="card">
                                     <div class="card-header">
-                                        <strong>Thông tin đăng nhập    </strong>
+                                        <strong> Username Login   </strong>
                                         <small>Form</small>
                                     </div>
                                     <div class="card-body">
@@ -118,7 +107,7 @@
 
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <label for="name">Mật khẩu </label>
+                                                    <label for="name"> Password </label>
  {!! Form::password('password',['class'=>"form-control ", "placeholder"=>""  ]) !!}
     
                                                     
@@ -127,7 +116,7 @@
                                             </div>
                                              <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <label for="name">Nhập lại mật khẩu  </label>
+                                                    <label for="name"> Confirm  </label>
  {!! Form::password('password_confirmation',['class'=>"form-control ", "placeholder"=>""  ]) !!}
     
                                                     
@@ -139,7 +128,7 @@
                                             <div class="card-footer">
                                                
                                                 <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
-                                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset </button>
+                                              
                                             </div>
                                         </div>
                                     </div>
@@ -150,6 +139,18 @@
              </div>
     @endsection
     @section('script_js') 
+     <script type="module"> 
+            @if(count($errors)>0)
+                
+                        @foreach($errors->all() as $error)
+                            window.toastr.error("{{$error}}");
+                        @endforeach
+                    
+            @endif
+            @if(!empty(session('success')))
+                window.toastr.success("{{session('success')}}");
+            @endif
+            </script>
         <script type="text/javascript">
              document.getElementById('banner_name').addEventListener('change', handleFileSelectBanner, false);
         </script>

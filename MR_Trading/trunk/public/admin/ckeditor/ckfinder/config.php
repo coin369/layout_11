@@ -72,6 +72,7 @@ if( isset($_SERVER['HTTPS'] ) ) {
 }else{
     $baseUrl = 'http://vangdecor.local/upload/user_upload/';
 }
+ $baseUrl = 'https://mandr-trading.com/public/upload/user_upload/';
 
 $config['backends'][] = array(
     'name'         => 'default',

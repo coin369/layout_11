@@ -11,47 +11,7 @@
 
 
         <div class="container-fluid">
-              {!! Form::open(['method'=>'get']) !!}
-
-            <div class="row"> 
-          
-               <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label for="name">Tên khách hàng:  </label>
- {!! Form::text('name',@$search['name'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>""  ]) !!}
-  
-                                                </div>
-                                            </div>
-
-               <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label for="name">Số điện thoại :    </label>
- {!! Form::text('phone',@$search['phone'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>""  ]) !!}
-  
-                                                </div>
-                                            </div>
-
-               <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label for="name">Email:    </label>
- {!! Form::text('email',@$search['email'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>""  ]) !!}
-  
-                                                </div>
-                                            </div>
-                                             <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label for="name">Tên đăng nhập    </label>
- {!! Form::text('username',@$search['username'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>""  ]) !!}
- 
-                                                </div>
-                                            </div>
-            <div class="col-sm-5">
-                 <button type="submit" name='is_search' value='1' class="btn btn-sm btn-warning"><i class="fa fa-ban"></i> TÌM KIẾM  </button>
-        </div>
- 
-
-        </div>
-        {!! Form::close()!!}
+             
 
 <div class="row">
                         <div class="col-lg-12">
@@ -64,12 +24,12 @@
                                         <thead>
                                             <tr>
                                                 <th>ID </th>
-                                                <th>Thông tin       </th>
+                                                <th> Name  </th>
                                               
-                                                <th> Tên đăng nhập   </th>
+                                                <th>  Username  </th>
                                             
                                     
-                                                <th> Tuỳ chọn </th>
+                                                <th>  Option </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -78,9 +38,9 @@
                                             <tr>
                                                 <td><?php echo $list['id'];?></td>
                                                 <td>
-                                                       Tên: <strong> {{$list['name']}}</strong><br />
+                                                       Name : <strong> {{$list['name']}}</strong><br />
                                                        Email: <strong> {{$list['email']}}</strong><br />
-                                                       Số điện thoại: <strong> {{$list['phone']}}</strong><br />
+                                                      Phone: <strong> {{$list['phone']}}</strong><br />
 
                                                         </td>
                                                       
@@ -92,9 +52,9 @@
                                                  
                                                           
                                                 <td>
-                                                    <a class="btn btn-sm btn-success" href='/admin/customer/edit/<?php echo $list['id'];?>'><i class="fa fa-edit"></i> Sửa </a>
+                                                    <a class="btn btn-sm btn-success" href='/admin/customer/edit/<?php echo $list['id'];?>'><i class="fa fa-edit"></i>  </a>
                                                     @if($list['role']==2)
-                                                    <a class="btn btn-sm btn-danger click_remove" href='/admin/customer/remove?id=<?php echo $list['id'];?>&_token={{ csrf_token() }}'> <i class="fa fa-remove"></i> Xoá  </a>
+                                                    <a class="btn btn-sm btn-danger click_remove" href='/admin/customer/remove?id=<?php echo $list['id'];?>&_token={{ csrf_token() }}'> <i class="fa fa-remove"></i>   </a>
                                                     @endif
                                                 </td>
 

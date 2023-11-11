@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://mandr-trading.com/'),
 
     'asset_url' => env('ASSET_URL'),
 
@@ -122,7 +122,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY',"base64:INFeuauNuWC3s8uVV7QQ6WiLU0bF8GIGrJEbPsB3Lww="),
 
     'cipher' => 'AES-256-CBC',
 

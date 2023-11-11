@@ -11,7 +11,7 @@
                     <div id="headerList">
                         <div id="headerTel">
                             <img src="/upload/banner/tel_header_sub2.png" alt="0473-69-7071" class="is-top is-hotline"><strong>0473-69-7071</strong>
-                            <img src="../assets/img/tel_header_sub2.png" alt="0473-69-7071" class="is-sub">
+                            <img src="/frontend/img/tel_header_sub2.png" alt="0473-69-7071" class="is-sub">
                             <span>受付時間：平日9:00～18:00</span>
                         </div>
                         <div id="headerContact">
@@ -22,8 +22,8 @@
                 </div>
 
                 <div id="toggle">
-                    <img src="../assets/img/btn_menu_header-off.png" alt="" class="nav_menu_off">
-                    <img src="../assets/img/btn_menu_header-on.png" alt="" class="nav_menu_on">
+                    <img src="/frontend/img/btn_menu_header-off.png" alt="" class="nav_menu_off">
+                    <img src="/frontend/img/btn_menu_header-on.png" alt="" class="nav_menu_on">
                 </div>
                 <nav id="gNavi">
                     <ul class="nav topnav" id="myTopnav">

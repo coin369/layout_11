@@ -28,19 +28,6 @@ class UserController extends AppController
                 "username"=>"required|max:225|unique:ca_users",
                 "password"=>"required|confirmed|min:6",
                
-            ],[
-                "name.required"=>"Vui lòng nhập tên.",
-                "name.max"=>"Vượt quá ký tự giới hạn",
-                "email.required"=>" Vui lòng nhập Email",
-                "email.email"=>"Vui lòng nhập đúng định dạng Email",
-                "email.unique"=>"Email đã tồn tại",
-                "phone.required"=>"Vui lòng số điện thoại",
-                "username.required"=>"Vui lòng nhập tên đăng nhập",
-                "username.unique"=>"Tên đăng nhập đã tồn tại ",
-                "password.required"=>"Vui lòng nhập mật khẩu",
-                "password.min"=>"Mật khẩu không nhỏ hơn 6 ký tự",
-            
-                "password.confirmed"=>"Nhập lại mật khẩu không chính xác"
             ]);
             if($validater->fails()){
                 return redirect("/admin/customer/add")->withErrors($validater)->withInput();
@@ -57,7 +44,7 @@ class UserController extends AppController
                
                 $TNew->save();
               
-                $request->session()->flash("success","Thêm mới người dùng thành công.");
+                $request->session()->flash("success","Successfully");
                 return redirect("/admin/customer/add");
             }
         }
@@ -113,26 +100,13 @@ class UserController extends AppController
                             
                         
                         ];
-                    $message_request=[
-                            "name.required"=>"Vui lòng nhập tên.",
-                            "name.max"=>"Vượt quá ký tự giới hạn",
-                            "email.required"=>" Vui lòng nhập Email",
-                            "email.email"=>"Vui lòng nhập đúng định dạng Email",
-                            "email.unique"=>"Email đã tồn tại",
-                            "phone.required"=>"Vui lòng số điện thoại",
-                            "username.required"=>"Vui lòng nhập tên đăng nhập",
-                            "username.unique"=>"Tên đăng nhập đã tồn tại ",
-                            
-                        
-                            "password.confirmed"=>"Nhập lại mật khẩu không chính xác"
-                        ];
+                   
                         if($password=$request->input("password")){
                             $get_request['password']="required|confirmed|min:6";
-                            $message_request['password.required']="Vui lòng nhập mật khẩu";
-                            $message_request['password.min']="Mật khẩu không nhỏ hơn 6 ký tự";
+                           
                         }
                     if($request->isMethod("post")){
-                        $validater=Validator::make($request->all(),$get_request,$message_request);
+                        $validater=Validator::make($request->all(),$get_request);
 
                         if($validater->fails()){
                             return redirect()->back()->withErrors($validater)->withInput();
@@ -151,7 +125,7 @@ class UserController extends AppController
                             $TUPdated->save();
                          
                          
-                            $request->session()->flash("success","Cập nhật thành công.");
+                            $request->session()->flash("success","Successfully");
                             return redirect()->back();
                         }
                     }
