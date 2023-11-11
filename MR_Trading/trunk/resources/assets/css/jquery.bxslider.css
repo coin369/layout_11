@@ -18,7 +18,7 @@
 	position: relative;
 	margin: 0 auto;
 	padding: 0;
-	*zoom: 1;
+	zoom: 1;
 }
 
 .bx-wrapper img {
@@ -81,8 +81,8 @@
 .bx-wrapper .bx-pager .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
 	display: block;
-	*zoom: 1;
-	*display: inline;
+	zoom: 1;
+	display: inline;
 }
 .bx-wrapper .bx-pager.bx-default-pager a {
 	background: #d9d9d9;

@@ -107,7 +107,7 @@
                             </div>
 
                             
-                              <?php echo \SEO\Seo::form($model); ?>
+                              <?php // echo \SEO\Seo::form($model); ?>
                              <div class="col-sm-12">
                                         <div class="card">
                                             

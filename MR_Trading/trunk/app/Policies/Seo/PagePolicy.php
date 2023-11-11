@@ -30,7 +30,7 @@ class PagePolicy
      */
     public function index(User $user)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -42,7 +42,7 @@ class PagePolicy
      */
     public function view(User $user, Page $page)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class PagePolicy
      */
     public function create(User $user)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -65,7 +65,7 @@ class PagePolicy
      */
     public function store(User $user, Page $page)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -77,7 +77,7 @@ class PagePolicy
      */
     public function edit(User $user, Page $page)
     {
-        return false;
+        return true;
     }
 
 
@@ -90,7 +90,7 @@ class PagePolicy
      */
     public function update(User $user, Page $page)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -102,7 +102,7 @@ class PagePolicy
      */
     public function bulkUpdate(User $user)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -150,7 +150,7 @@ class PagePolicy
      */
     public function upload(User $user)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -162,7 +162,7 @@ class PagePolicy
      */
     public function download(User $user)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -174,7 +174,7 @@ class PagePolicy
      */
     public function images(User $user, Page $page)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -198,7 +198,7 @@ class PagePolicy
      */
     public function zip(User $user)
     {
-        return false;
+        return true;
     }
 
 }

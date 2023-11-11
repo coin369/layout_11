@@ -36,11 +36,42 @@ class IndexController extends AppController
          
 
         $this->View['data_list']=DTMain::orderBy("id","ASC")->paginate(20);
+         $this->View['data_list_human']=DTMainHuman::orderBy("id","ASC")->get();
        
        
         return view("admin.general.index.index",$this->View);
     }
 
-   
+    public function edit($id,Request $request){
+
+        $TUpdated=DTMain::where("id",$id)->first();
+       
+        //home
+        // if($id==1){
+        if($request->isMethod("post")){
+            $validator=Validator::make($request->all(),[
+                "name"=>"required",
+                "content"=>"required"
+            ]);
+            if($validator->fails()){
+                return redirect()->back()->withErrors($validator)->withInput();
+            }else{
+
+             
+                $TUpdated->name=$request->input("name");
+                
+                $TUpdated->content=$request->input("content");
+               
+                $TUpdated->save();
+
+                $request->session()->flash("success","Successfully ");
+                return redirect()->back();
+            }
+        }
+          
+         $this->View['page']=$TUpdated;
+    
+        return view("admin.general.index.edit",$this->View);
+    }
 
 }

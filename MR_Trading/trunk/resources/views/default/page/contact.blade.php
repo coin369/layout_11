@@ -40,7 +40,9 @@
                     <article class="main-article">
                         <section class="pageTitle">
                             <div class="pageTitleIn">
-                                <h2>Contact Us<span>お気軽にお問い合わせください</span></h2>
+                                <h2>Contact Us
+                                    <div class="span">お気軽にお問い合わせください</div>
+                                </h2>
                             </div>
                         </section>
                         <section id="content">

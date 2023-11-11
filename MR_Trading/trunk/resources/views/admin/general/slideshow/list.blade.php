@@ -32,6 +32,7 @@
                                         <thead>
                                             <tr>
                                                 <th>ID </th>
+                                                <th>Page</th>
                                                 <th>Name     </th>
                                                 <th>Link</th>
                                                 <th> Created At</th>
@@ -45,6 +46,12 @@
                                               
                                             <tr>
                                                 <td><?php echo $list['id'];?></td>
+                                                 <td>
+                                                    <a href="<?php echo $list->Main()['alias'];?>" target="_black">
+                                                    <?php echo $list->Main()['name'];?>
+                                                </a>
+                                                        
+                                                    </td>
                                                 <td>
                                                      
                                                         <?php echo $list['name'];?>

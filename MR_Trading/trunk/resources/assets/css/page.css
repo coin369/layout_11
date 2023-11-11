@@ -988,13 +988,13 @@ table {
     margin: 0 auto 30px;
 }
 
-.tabControl li {
+.tabControl div {
     margin: 0 10px 10px 0;
     /* background: url(https://pafmo.com/img/pattern_dot01.svg) #f8d8d8; */
     text-align: center;
 }
 
-.tabControl li a {
+.tabControl div a {
     width: 160px;
     padding: 10px;
     display: inline-block;
@@ -1003,8 +1003,8 @@ table {
     color: #fff;
 }
 
-.tabControl li a.current,
-.tabControl li a:hover {
+.tabControl div a.current,
+.tabControl div a:hover {
     background: #fa807d;
 }
 
@@ -1012,15 +1012,15 @@ table {
     margin: 0 auto 20px;
 }
 
-.tabControl li {
+.tabControl div {
     margin: 0 18px 10px 0;
 }
 
-.tabControl li:last-child {
+.tabControl div:last-child {
     margin-right: 0;
 }
 
-.tabControl li a {
+.tabControl div a {
     width: 350px;
 }
 

@@ -6,7 +6,18 @@
 //feedElement: '#feed' == 埋め込むエレメント
 //
 //記述例）
+
+import toastr from 'toastr';
+toastr.options.closeMethod = 'fadeOut';
+toastr.options.closeDuration = 1000;
+toastr.options.progressBar = true;
+toastr.options.closeEasing = 'swing';
+window.toastr = toastr;
+
+
+
 import WOW from "wow.js"; 
+
 (function ($) {
 
     $(".slider").bxSlider({
@@ -105,5 +116,29 @@ import WOW from "wow.js";
             }
         });
     }
+
+    
+    if ($(window).innerWidth() <= 780) {
+       $(".slider_product").bxSlider({
+        auto: false,
+        autoControls: false,
+        minSlides: 2,
+        maxSlides: 2,
+        moveSlides: 2,
+        slideWidth: 220,
+        pager: false,
+    });
+    }else{
+         $(".slider_product").bxSlider({
+            auto: false,
+            autoControls: false,
+            minSlides: 5,
+            maxSlides: 5,
+            moveSlides: 5,
+            slideWidth: 220,
+            pager: false,
+        });
+    }
+   
 
 })(jQuery);

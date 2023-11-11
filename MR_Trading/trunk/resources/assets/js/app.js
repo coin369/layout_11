@@ -1,20 +1,20 @@
-window.$ = window.jQuery = import("./jquery-2.2.0.min");
+
+
+
+
+ import $ from "jquery";
+
+ window.$ = window.jQuery = $;
+
 window.$.scrollUp=import("./jquery.scrollup.js");
 
+window.$.bxSlider=import("./jquery.bxslider.js");
 
+ 
 import("./common.js");
 
-window.$.bxSlider=import("./jquery.bxslider.min.js");
 
 
-import("./feed.js");
+import("./feed");
 
-
-
-import toastr from 'toastr';
-toastr.options.closeMethod = 'fadeOut';
-toastr.options.closeDuration = 1000;
-toastr.options.progressBar = true;
-toastr.options.closeEasing = 'swing';
-window.toastr = toastr;
 

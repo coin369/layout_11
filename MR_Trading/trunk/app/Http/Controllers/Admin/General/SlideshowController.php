@@ -11,6 +11,8 @@ use Image;
 use Validator;
 use App;
 
+use App\Models\Main as DTMain;
+
 
 
 class SlideshowController extends AppController
@@ -20,6 +22,7 @@ class SlideshowController extends AppController
      public function add(Request $request)
     {
         $data=[];
+
        
         if($request->isMethod("post")){
             $validator=Validator::make($request->all(),[
@@ -32,6 +35,7 @@ class SlideshowController extends AppController
             }else{
                 $picture=$request->file("picture");
                 $TNew=new App\Models\Slideshow();
+                $TNew->cid_main=$request->input("cid_main");
                 $TNew->name=$request->input("name");
                 $TNew->links=$request->input("links");
                  $TNew->position=$request->input("position");
@@ -63,6 +67,8 @@ class SlideshowController extends AppController
                 return redirect("/admin/slideshow/add");
             }
         }
+
+        $this->View['cid_main']= DTMain::orderBy("id","ASC")->pluck("name",'id');
          $data['position']=App\Models\Slideshow::count();
         $this->View['data']=$data;
         return view("admin.general.slideshow.add",$this->View);
@@ -73,7 +79,7 @@ class SlideshowController extends AppController
             $search=$request->input("search");
         }
         $this->View['search']=$search;
-        $this->View['data_list']=App\Models\Slideshow::where("name","LIKE","%$search%")->orderBy("position","ASC")->paginate(20);
+        $this->View['data_list']=App\Models\Slideshow::where("name","LIKE","%$search%")->orderBy("cid_main","ASC")->paginate(100);
         return view("admin.general.slideshow.list",$this->View);
 
     }
@@ -115,6 +121,7 @@ class SlideshowController extends AppController
 
                         $get_data->picture=$name_picture;
                 }
+                $get_data->cid_main=$request->input("cid_main");
                 $get_data->name=$request->input("name");
                 $get_data->links=$request->input("links");
                  $get_data->position=$request->input("position");
@@ -127,7 +134,7 @@ class SlideshowController extends AppController
             }
 
             $data = $get_data->toArray();
-
+            $this->View['cid_main']= DTMain::orderBy("id","ASC")->pluck("name",'id');
             $this->View['data']=$data;
             return view("admin.general.slideshow.edit",$this->View);
         

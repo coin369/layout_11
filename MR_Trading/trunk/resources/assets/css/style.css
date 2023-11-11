@@ -883,7 +883,7 @@
     opacity: 1;
     transition: 1s ease 1.2s;
 }
-#message h2 {
+#message h2,#message .h2 {
     text-align: center;
     position: absolute;
     /* top: -27px; */
@@ -902,7 +902,7 @@
     position: relative;
     left: 52px;
 }
-#message figure {
+ #message .figure {
     padding-right: 2px;
     position: absolute;
     right: 58px;

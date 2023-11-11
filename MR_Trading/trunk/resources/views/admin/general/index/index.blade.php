@@ -31,8 +31,8 @@
                                                 <th>ID </th>
                                                 <th>Name   </th>
                                              
-                                              
-                                                <th> Child </th>
+                                                <th>Link</th>
+                                           
                                              
                                                 <th> Option </th>
                                             </tr>
@@ -50,26 +50,16 @@
                                                       </a>
 
                                                         </td>
-                                                <td>
-                                                    @if($list['id']==2)
-                                                        <table>
-                                                            <tbody>
-                                                                @foreach($list as $h)
-                                                                <tr>
-                                                                    <td>
-                                                                        <a href="/human/{{$h['alias']}}" target="_black">
-                                                                             {{$h['name']}}
-                                                                        </a>
-                                                                    </td>
-                                                                    <td>
-                                                                           <a class="btn btn-sm btn-success" href='/admin/index/edit/<?php echo $list['id'];?>'><i class="fa fa-edit"></i>  </a>
-                                                                    </td>
-                                                                </tr>
-                                                                @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                    @endif
-                                                </td>
+                                                
+                                                 <td>
+                                                     <a href='{{$list["alias"]}}' target='_black'>
+                                                        <?php echo $list['alias'];?>
+                                                   
+                                                   
+                                                      </a>
+
+                                                        </td>
+                                                
                                                 <td>
                                                
 

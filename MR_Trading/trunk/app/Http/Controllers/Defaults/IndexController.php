@@ -20,6 +20,8 @@ use App\Models\Page as DTPage;
 
 use App\Models\Slideshow as DTSlideshow;
 
+use App\Models\Main as DTMain;
+
 
 
 //use Spatie\ResponseCache\Facades\ResponseCache;
@@ -73,7 +75,9 @@ class IndexController extends AppController
 
     
       $this->View['TNews']=DTNews::where('status','1')->limit(4)->orderBy("id","DESC")->get();
-      $this->View['TSlide']=DTSlideshow::where('status','1')->orderBy("position","ASC")->get();
+      $this->View['TSlide']=DTSlideshow::where("cid_main","1")->where('status','1')->orderBy("position","ASC")->get();
+
+       $this->View['THome']=DTMain::where('id','1')->first();
 
           
     	return view("default.index.index",$this->View);

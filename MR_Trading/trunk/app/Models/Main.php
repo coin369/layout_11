@@ -13,5 +13,8 @@ class Main extends Model
      public function Value(){
         return $this->hasMany(MainValue::class,"cid_main")->orderBy("id","ASC")->getResults();
     }
+    public function Slideshow(){
+        return $this->hasMany(Slideshow::class,"cid_main")->orderBy("position","ASC")->getResults();
+    }
     
 }

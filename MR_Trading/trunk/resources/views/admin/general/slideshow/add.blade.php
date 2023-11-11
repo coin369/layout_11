@@ -37,7 +37,17 @@
                                     <div class="card-body">
                                         <div class="row">
 
-                                           
+                                           <div class="col-sm-10">
+                                                <div class="form-group">
+                                                    <label for="name"> Page     <span style="color:red">*</span>  </label>
+ {!! Form::select('cid_main',$cid_main,@$data['cid_main'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control "  ]) !!}
+  
+                                                    
+                                                  
+                                                </div>
+                                            </div>
+                                          
+
                                             <div class="col-sm-10">
                                                 <div class="form-group">
                                                     <label for="name">Name:  </label>
@@ -77,7 +87,7 @@
 
                                                   
                                                       <span style="color:red">*</span>
-                                                <div class="detail_banner"></div>
+                                                <div class="detail_banner" style="max-width: 400px;"></div>
                                                         </div>
                                                        
 
@@ -127,4 +137,9 @@
         <script type="text/javascript">
              document.getElementById('banner_name').addEventListener('change', handleFileSelectBanner, false);
         </script>
+        <style>
+            img.thumb{
+                max-width: 400px;
+            }
+        </style>
     @endsection

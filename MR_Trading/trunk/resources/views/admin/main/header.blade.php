@@ -7,7 +7,7 @@
         <ul class="nav navbar-nav d-md-down-none">
                 
  
-              
+            <!--   
             <li class="nav-item px-2">
                 <a class="btn btn-sm {{$is_side=='general'?'btn-success':'btn-primary'}}" href="/admin/index/index">
                     <i class='fa fa-info'></i>
@@ -19,7 +19,7 @@
                 <a class="btn btn-sm {{$is_side=='seo'?'btn-success':'btn-primary'}}" href="/seo/dashboard">
                    <i class="fa fa-cog" aria-hidden="true"></i>
                  SEO  </a>
-            </li>
+            </li> -->
           
           
             

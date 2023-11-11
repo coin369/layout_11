@@ -8,7 +8,7 @@ Route::group(["namespace"=>"App\Http\Controllers\Admin","prefix"=>"admin","middl
 	Route::group(["namespace"=>"General"],function(){
 				Route::group(['prefix'=>'index'],function(){
 					Route::any("/index","IndexController@index");
-					Route::any("/home","IndexController@home");
+					Route::any("/edit/{id}","IndexController@edit");
 				});
 			
 								

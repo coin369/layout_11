@@ -32,8 +32,12 @@ $config['authentication'] = function () {
 /*============================ License Key ============================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
-$config['licenseName'] = '';
-$config['licenseKey']  = '';
+// $config['licenseName'] = 'vangdecor.local';
+// $config['licenseKey']  = 'S2D2UAG4XNJGLY6577YKPWWJ9RJJT';
+
+
+$config['licenseName'] = 'mandr-trading.com';
+$config['licenseKey']  = 'YPNPUUH1AHF4JBJFVYS9LEJF94NEB';
 
 /*============================ CKFinder Internal Directory ============================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_privateDir

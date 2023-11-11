@@ -465,7 +465,7 @@
     border-bottom: 0;
 }
 .checkList li:before {
-    content: url(../img/ico_check01.png);
+
     position: absolute;
     top: 5px;
     left: 0;

@@ -8,12 +8,8 @@ use Validator;
 
 use App\Models\Page as DTPage;
 use App\Models\Contact as DTContact;
-use App\Models\Product as DTProduct;
-use App\Models\Cooperate as DTCooperate;
-
-use App\Models\Youtubecate as DTYoutubecate;
-use App\Models\Newsletter as DTNewsletter;
-use App\Models\Youtube as DTYoutube;
+use App\Models\Main  as DTMain;
+use App\Models\Slideshow as DTSlideshow;
 
 use Mail;
 use Cache;
@@ -103,17 +99,34 @@ class PageController extends AppController
     public function human()
     {
          $this->View['active']='human';
+
+     $this->View['THome']=DTMain::where('id','2')->first();
+      $this->View['TSlide']=DTSlideshow::where("cid_main","2")->where('status','1')->orderBy("position","ASC")->get();
+
        return view("default.page.human",$this->View);
     }
     public function sweets()
     {
          $this->View['active']='sweets';
+          $this->View['THome']=DTMain::where('id','3')->first();
+           $this->View['TSlide']=DTSlideshow::where("cid_main","3")->where('status','1')->orderBy("position","ASC")->get();
        return view("default.page.sweets",$this->View);
     }
     public function company()
     {
+
+        $this->View['THome']=DTMain::where("id","5")->first();
+         $this->View['TSlide']=DTSlideshow::where("cid_main","5")->where('status','1')->orderBy("position","ASC")->get();
          $this->View['active']='company';
        return view("default.page.company",$this->View);
+    }
+     public function salon()
+    {
+
+        $this->View['THome']=DTMain::where("id","4")->first();
+         $this->View['TSlide']=DTSlideshow::where("cid_main","4")->where('status','1')->orderBy("position","ASC")->get();
+         $this->View['active']='company';
+       return view("default.page.salon",$this->View);
     }
     
 }

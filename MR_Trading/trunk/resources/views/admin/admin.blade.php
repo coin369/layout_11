@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Łukasz Holeczek">
+    <meta name="author" content="buitantin@gmail.com">
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="{{asset(PUBLIC_URL.'img/favicon.png')}}">
     <title> @yield('title','BANCKEND - ADMIN  ')	</title>
@@ -18,6 +18,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}')}}">
     <!-- Main styles for this application -->
     <link href="{{asset(PUBLIC_URL.'admin/admin/css/style.css')}}" rel="stylesheet">
+
+   
 
 
      @vite(['resources/assets/css/backend.scss', 'resources/assets/js/backend.js'])

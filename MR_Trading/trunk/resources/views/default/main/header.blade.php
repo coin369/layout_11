@@ -27,10 +27,11 @@
                 </div>
                 <nav id="gNavi">
                     <ul class="nav topnav" id="myTopnav">
-                        <li><a href="{{route('home')}}" class='{{$active=="home"?"current":""}}' title="ホーム">ホーム</a></li>
-                        <li><a href="{{route('human')}}" class='{{$active=="human"?"current":""}}'  title="人材総合支援事業">人材総合支援事業</a></li>
-                        <li><a href="{{route('sweets')}}" title="食品製造販売事業">食品製造販売事業</a></li>
-                        <li><a href="{{route('company')}}" title="会社案内">会社案内</a></li>
+                        @foreach($TMenu as $menu)
+                            <li><a href="{{$menu['alias']}}" class='{{$active==$menu["alias"]?"current":""}}' title="{{$menu['name']}}">{{$menu['name']}}
+                            </a></li>
+                        @endforeach
+                        
                     </ul>
                     <!-- /gNaviWrap -->
                 </nav>

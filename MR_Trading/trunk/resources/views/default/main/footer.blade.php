@@ -16,22 +16,19 @@
                     <ul id="footerList01">
                         <li><a href="{{route('company')}}" title="会社案内">会社案内</a></li>
                         <li><a href="{{route('sweets')}}" title="食品製造販売事業">食品製造販売事業</a></li>
-                        <li><a href="{{route('news.index')}}" title="お知らせ">お知らせ</a></li>
+                       
                     </ul>
                     <ul id="footerList02">
+                         <li><a href="{{route('news.index')}}" title="お知らせ">お知らせ</a></li>
                         <li><a href="{{route('contact')}}" title="#">お問い合わせ</a></li>
-                        @foreach($TPage as $page)
-                        <li><a href="{{route('page',['alias'=>$page['alias']])}}" title="{{$page['name']}}">プライバシーポリシー</a></li>
-                        @endforeach
-                        <li><a href="{{route('human')}}" title="#">OTA FACTORYの強み</a></li>
-                        <li><a href="{{route('human')}}" title="#">ジョブダイアリー</a></li>
+                      
+                      
                     </ul>
                     
                     <ul id="footerList03">
-                        <li><a href="{{route('human')}}" title="#">お客様の声</a></li>
-                        <li><a href="{{route('human')}}" title="#">料金</a></li>
-                        <li><a href="{{route('human')}}" title="#">よくある質問</a></li>
-                        <li><a href="{{route('human')}}" title="#">特定技能について</a></li>
+                        @foreach($TPage as $page)
+                        <li><a href="{{route('page',['alias'=>$page['alias']])}}" title="{{$page['name']}}">プライバシーポリシー</a></li>
+                        @endforeach
                     </ul>
                     <!-- /footerRight -->
 

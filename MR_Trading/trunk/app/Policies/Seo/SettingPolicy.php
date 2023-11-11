@@ -30,7 +30,7 @@ class SettingPolicy
      */
     public function index(User $user)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -42,7 +42,7 @@ class SettingPolicy
      */
     public function edit(User $user, Setting $setting)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -54,7 +54,7 @@ class SettingPolicy
      */
     public function update(User $user, Setting $setting)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -66,7 +66,7 @@ class SettingPolicy
      */
     public function store(User $user, Setting $setting)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -78,7 +78,7 @@ class SettingPolicy
      */
     public function robotTxt(User $user, Setting $setting)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -90,7 +90,7 @@ class SettingPolicy
      */
     public function htaccess(User $user, Setting $setting)
     {
-        return false;
+        return true;
     }
 
 }

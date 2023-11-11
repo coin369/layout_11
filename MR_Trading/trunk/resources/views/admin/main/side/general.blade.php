@@ -6,7 +6,7 @@
                     </li>
                    
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/index/index"><i class="fa fa-sitemap"></i> General <an class="badge badge-primary">NEW</an></a>
+                        <a class="nav-link" href="/admin/index/index"><i class="fa fa-sitemap"></i> Main  <an class="badge badge-primary">NEW</an></a>
                     </li>
                     
                     <li class="nav-item">
@@ -54,4 +54,5 @@
                   
                 </ul>
             </nav>
+            
         </div>

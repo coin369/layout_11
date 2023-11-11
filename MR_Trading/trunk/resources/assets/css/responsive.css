@@ -2,16 +2,16 @@
 
   #message,
   #mainBanner,
-  .pageTitleIn h2 {
+  .pageTitleIn .h2 {
     width: 100%;
   }
 
-  #message figure {
+  #message figure, #message .figure {
     position: static;
     text-align: center;
   }
 
-  #wrapper>section {
+  #wrapper>.section {
     padding: 5px;
   }
 
@@ -27,7 +27,7 @@
     width: 100%;
   }
 
-  .pageTitleIn h2 {
+  .pageTitleIn .h2 {
     margin-bottom: 0px !important;
     padding-bottom: 0px;
   }
@@ -152,8 +152,8 @@
     box-sizing: border-box;
   }
 
-  .pageTitleIn h2,
-  .pageTitleIn h2 span {
+  .pageTitleIn .h2,
+  .pageTitleIn .h2 .span {
     font-size: 26px;
   }
 
@@ -263,13 +263,13 @@
     padding: 0px !important;
   }
 
-  .main-article .pageTitleIn h2 {
+  .main-article .pageTitleIn .h2 {
     width: 100%;
     font-size: 22px;
     padding: 0;
   }
 
-  .pageTitleIn h2 span {
+  .pageTitleIn .h2 .span {
     font-size: 18px !important;
   }
 
@@ -312,7 +312,7 @@
     box-sizing: border-box;
   }
 
-  #sideContents .tabControl li a {
+  #sideContents .tabControl div a {
     box-sizing: border-box;
   }
 

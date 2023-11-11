@@ -18,7 +18,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 body {
     line-height: 1;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, .section {
     display: block;
 }
 nav ul {
@@ -263,7 +263,7 @@ body {
 ------------------------------------*/
 
 #gNavi {
-    width: 639px;
+    width: 739px;
     position: absolute;
     top: 112px;
     right: -3px;
@@ -447,7 +447,7 @@ body {
     width: 280px;
     height: 80px;
     text-indent: -9999px;
-    background-image: url(../img/sidenavi.png);
+ 
     background-repeat: no-repeat;
 }
 #asideNavi #asideNavi01 a {
@@ -491,38 +491,7 @@ body {
 #asideNavi a:hover:before {
     opacity: 1;
 }
-#asideNavi #asideNavi01 a:before {
-    background-image: url(../img/sidenavi.png);
-    background-position: -280px 0;
-}
-#asideNavi #asideNavi02 a:before {
-    background-image: url(../img/sidenavi.png);
-    background-position: -280px -80px;
-}
-#asideNavi #asideNavi03 a:before {
-    background-image: url(../img/sidenavi.png);
-    background-position: -280px -160px;
-}
-#asideNavi #asideNavi04 a:before {
-    background-image: url(../img/sidenavi.png);
-    background-position: -280px -240px;
-}
-#asideNavi #asideNavi05 a:before {
-    background-image: url(../img/sidenavi.png);
-    background-position: -280px -320px;
-}
-#asideNavi #asideNavi06 a:before {
-    background-image: url(../img/sidenavi.png);
-    background-position: -280px -400px;
-}
-#asideNavi #asideNavi07 a:before {
-    background-image: url(../img/sidenavi.png);
-    background-position: -280px -480px;
-}
-#asideNavi #asideNavi08 a:before {
-    background-image: url(../img/sidenavi.png);
-    background-position: -280px -560px;
-}
+
 #bnrCommon li {
     margin-bottom: 19px;
 }

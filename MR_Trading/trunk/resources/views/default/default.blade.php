@@ -44,7 +44,7 @@
       
     <link href="{{asset('/img/favicon.ico')}}" rel="shortcut icon">
   
-  @vite(['resources/assets/css/app.scss', 'resources/assets/js/app.js'])
+  @vite(['resources/assets/css/app.scss' , 'resources/assets/js/app.js'])
 
 
 </head>

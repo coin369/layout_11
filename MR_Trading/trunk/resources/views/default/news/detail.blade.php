@@ -41,7 +41,9 @@
                             <section class="pageTitle">
                                 <div class="pageTitleIn">
                                     @if(!empty($cate))
-                                    <h2>INFORMATION<span>{{$cate['name']}}</span></h2>
+                                    <h2>INFORMATION
+                                        <div class="span">{{$cate['name']}}</div>
+                                    </h2>
                                     @endif
                                 </div>
                             </section>

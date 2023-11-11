@@ -9,16 +9,12 @@ use App\Models\General as DTGeneral;
 use App\Models\Page as DTPage;
 use App\Models\Cate as DTCate;
 use App\Models\Banner as DTBanner;
-use App\Models\Product as DTProduct;
-
-use App\Models\Service as DTService;
+use App\Models\Main as DTMain;
 
 use App\Models\News_Cate as DTNewscate;
 
 
 
-use App\Models\Redirects as DTRedirects;
-use App\Models\OldPost as DTOldPost;
 use App\Models\News as DTNews;
 
 use App\Models\Seolinks as DTSeolinks;
@@ -129,7 +125,7 @@ class AppController extends Controller
     //  Cache::flush();
 
      
-      
+      $this->View['TMenu'] = DTMain::orderBy("id","ASC")->get();
      
 
 

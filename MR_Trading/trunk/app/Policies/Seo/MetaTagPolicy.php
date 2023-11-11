@@ -30,7 +30,7 @@ class MetaTagPolicy
      */
     public function index(User $user)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class MetaTagPolicy
      */
     public function create(User $user)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class MetaTagPolicy
      */
     public function store(User $user, MetaTag $metaTag)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -65,7 +65,7 @@ class MetaTagPolicy
      */
     public function edit(User $user, MetaTag $metaTag)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -77,7 +77,7 @@ class MetaTagPolicy
      */
     public function update(User $user, MetaTag $metaTag)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -89,7 +89,7 @@ class MetaTagPolicy
      */
     public function global(User $user, MetaTag $metaTag)
     {
-        return false;
+        return true;
     }
 
     /**
@@ -101,7 +101,7 @@ class MetaTagPolicy
      */
     public function delete(User $user, MetaTag $metaTag)
     {
-        return false;
+        return true;
     }
 
 }

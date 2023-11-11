@@ -33,6 +33,8 @@ Route::group(["namespace"=>"App\Http\Controllers\Defaults",'middleware'=>['web']
     Route::get("/not-found","IndexController@notfound")->name("notfound");
     
     Route::get('/human', "PageController@human")->name("human");
+    Route::get('/salon', "PageController@salon")->name("salon");
+    
     Route::get('/sweets', "PageController@sweets")->name("sweets");
     Route::get('/company', "PageController@company")->name("company");
 

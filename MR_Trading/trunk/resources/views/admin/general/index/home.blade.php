@@ -1,9 +1,15 @@
 @extends("admin.admin")
  @section('content')
 
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"> Trang chủ </li>
-                <li class="breadcrumb-item"><a href="">Thiệt lập trang chủ  </a>
+             <ol class="breadcrumb">
+                <li class="breadcrumb-item"> 
+                        <a href="/" target="_black">Home </a>
+                 </li>
+
+                 <li class="breadcrumb-item"> 
+                        <a href="/admin/index/index" target="_black"> General  </a>
+                 </li>
+                <li class="breadcrumb-item"><a href=""> {{$page['name']}}    </a>
                 </li>
                
               
@@ -11,72 +17,166 @@
 
 
         <div class="container-fluid">
-                    
-          {!!Form::open(['method'=>'post','files'=>true])!!}
-                    @if(!empty($success))
-                    <div class="col-sm-12 col-md-12">
-                            <div class="card card-inverse card-primary text-center">
-                                <div class="card-block">
-                                    <blockquote class="card-blockquote">
-                                        <p>Cập nhật thông tin thành công. </p>
-                                       
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+               
+           {!! Form::open(['method'=>'post','files'=>true]) !!}
+                  
             <div class="col-sm-12">
+
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Thiệt lập trang chủ </strong>
-                                        <small>Form</small>
+                                        <strong> INFORMATION  </strong>
+                                        <small>お知らせ </small>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
 
+                                           
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label for="name"> Name    <span style="color:red">*</span>
+                                      </label>
+ {!! Form::text('key_1',@$data_1['key'],['class'=> "form-control ", "placeholder"=>"Input..." ,"requried" ]) !!}
+                 
+
+                                                  
+                                                </div>
+                                            </div>
+     
+                                     <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label for="name"> English    <span style="color:red">*</span>
+                                      </label>
+ {!! Form::text('key_en_1',@$data_1['key_en'],['class'=> "form-control ", "placeholder"=>"Input..." ,"requried" ]) !!}
+                 
+
+                                                  
+                                                </div>
+                                            </div>                                       
                                             <div class="col-sm-10">
 
                                                 <div class="form-group">
-                                                    <label for="name">Tên  </label>
-             <input type="text" class="form-control {{ (!empty($error['name1'])) ? 'is-invalid':'' }}"  name="name1" id="name" placeholder="Nhập.. " value="{{@$data['name1']}}"  />
-                                                    @if(!empty($error['name1']))
-                                                    <div class="invalid-feedback">
-                                                        {{@$error['name1']}}
-                                                    </div>
-                                                    @endif
+                                                  <label for="name"> Content </label>
+
+
+                                                
+
+                                                   {!!Form::textarea('content_1',@$data_1['value'],['class'=>'form-control','id'=>'contents_1'])!!}
+
+                                                
                                                 </div>
 
                                             </div>
-                                            
-                                              <div class="col-sm-10">
 
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+
+
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong> MESSAGE  </strong>
+                                        <small>メッセージ </small>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+
+                                           
+                                            <div class="col-sm-5">
                                                 <div class="form-group">
-                                                  <label for="name"> Mô tả </label>
+                                                    <label for="name"> Name    <span style="color:red">*</span>
+                                      </label>
+ {!! Form::text('key_2',@$data_2['key'],['class'=> "form-control ", "placeholder"=>"Input..." ,"requried" ]) !!}
+                 
 
-
-                                                  <textarea  id='description1'  name="description1"  name="textarea-input" rows="9" class="form-control {{ (!empty($error['description1'])) ? 'is-invalid':'' }}" placeholder="Content..">{{@$data['description1']}}</textarea>
-                                                   <span style="color:red">*</span>
-                                                 
+                                                  
                                                 </div>
-
                                             </div>
-                                               <div class="col-sm-10">
+     
+                                     <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label for="name"> English    <span style="color:red">*</span>
+                                      </label>
+ {!! Form::text('key_en_2',@$data_2['key_en'],['class'=> "form-control ", "placeholder"=>"Input..." ,"requried" ]) !!}
+                 
+
+                                                  
+                                                </div>
+                                            </div>     
+                                         <div class="col-sm-10">
 
                                                       
                                                         <div class="form-group">
-                                                            <label for="name"> Hình ảnh    </label>
-      {!! Form::file('picture',['class'=>' form-control is-invalid','accept'=>'image/*','id'=>'picture1']) !!}
+                                                            <label for="name"> Picture   </label>
+      {!! Form::file('picture_2',['class'=>'load_banner form-control','accept'=>'image/*','id'=>'banner_name']) !!}
                                                         
 
-                                                    @if(!empty($error['picture1']))
-                                                    <div class="invalid-feedback">
-                                                        {{@$error['picture1']}}
+                                                  
+                                                      <span style="color:red">*</span>
+                                                <div class="detail_banner"></div>
+                                                        </div>
+                                                       
+
                                                     </div>
-                                                    @endif
+                                                    
+
+                                        
+
+                                            <div class="col-sm-10">
+
+                                                <div class="form-group">
+                                                  <label for="name"> Content </label>
+
+
+                                                
+
+                                                   {!!Form::textarea('content_2',@$data_2['value'],['class'=>'form-control','id'=>'contents_2'])!!}
+
+                                                
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+
+
+                                 <div class="card">
+                                    <div class="card-header">
+                                        <strong> OUR SERVICE  </strong>
+                                        <small> 会社情報 </small>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+
+                                           
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label for="name"> Name    <span style="color:red">*</span>
+                                      </label>
+ {!! Form::text('key_3',@$data_3['key'],['class'=> "form-control ", "placeholder"=>"Input..." ,"requried" ]) !!}
+                 
+
+                                                  
+                                                </div>
+                                            </div>
+     
+                                      
+                                         <div class="col-sm-10">
+
+                                                      
+                                                        <div class="form-group">
+                                                            <label for="name"> Picture   </label>
+      {!! Form::file('picture_3',['class'=>'load_banner form-control','accept'=>'image/*','id'=>'banner_name']) !!}
+                                                        
+
+                                                  
                                                       <span style="color:red">*</span>
                                                 <div class="detail_banner">
-                                                        <img src="/<?=PUBLIC_URL?>upload/banner/{{@$data['picture1']}}" />
-
+                                                    
                                                 </div>
                                                         </div>
                                                        
@@ -84,109 +184,53 @@
                                                     </div>
                                                     
 
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-
-               
-                            </div>
-
-                             <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong> Dự án  </strong>
-                                        <small>Form</small>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
+                                        
 
                                             <div class="col-sm-10">
 
                                                 <div class="form-group">
-                                                    <label for="name">Tên  </label>
-             <input type="text" class="form-control {{ (!empty($error['name2'])) ? 'is-invalid':'' }}"  name="name2" id="name" placeholder="Nhập.. " value="{{@$data['name2']}}"  />
-                                                    @if(!empty($error['name2']))
-                                                    <div class="invalid-feedback">
-                                                        {{@$error['name2']}}
-                                                    </div>
-                                                    @endif
+                                                  <label for="name"> Content </label>
+
+
+                                                
+
+                                                   {!!Form::textarea('content_3',@$data_3['value'],['class'=>'form-control','id'=>'contents_3'])!!}
+
+                                                
                                                 </div>
 
                                             </div>
-                                            
-                                              <div class="col-sm-10">
-
-                                                <div class="form-group">
-                                                  <label for="name"> Mô tả </label>
-
-
-                                                  <textarea  id='description2'  name="description2"  name="textarea-input" rows="9" class="form-control {{ (!empty($error['description2'])) ? 'is-invalid':'' }}" placeholder="Content..">{{@$data['description2']}}</textarea>
-                                                   <span style="color:red">*</span>
-                                                 
-                                                </div>
-
-                                            </div>
-                                             
 
                                         </div>
-                                       
-                                    </div>
-                                </div>
 
-               
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong>Thiệt lập trang chủ </strong>
-                                        <small>Form</small>
-                                    </div>
-                                    <div class="card-body">
+
                                         <div class="row">
 
-                                            <div class="col-sm-10">
-
+                                           
+                                            <div class="col-sm-5">
                                                 <div class="form-group">
-                                                    <label for="name">Tên  </label>
-             <input type="text" class="form-control {{ (!empty($error['name3'])) ? 'is-invalid':'' }}"  name="name3" id="name" placeholder="Nhập.. " value="{{@$data['name3']}}"  />
-                                                    @if(!empty($error['name3']))
-                                                    <div class="invalid-feedback">
-                                                        {{@$error['name3']}}
-                                                    </div>
-                                                    @endif
+                                                    <label for="name"> Name    <span style="color:red">*</span>
+                                      </label>
+ {!! Form::text('key_4',@$data_4['key'],['class'=> "form-control ", "placeholder"=>"Input..." ,"requried" ]) !!}
+                 
+
+                                                  
                                                 </div>
-
                                             </div>
-                                            
-                                              <div class="col-sm-10">
-
-                                                <div class="form-group">
-                                                  <label for="name"> Mô tả </label>
-
-
-                                                  <textarea  id='description3'  name="description3"  name="textarea-input" rows="9" class="form-control {{ (!empty($error['description3'])) ? 'is-invalid':'' }}" placeholder="Content..">{{@$data['description3']}}</textarea>
-                                                   <span style="color:red">*</span>
-                                                 
-                                                </div>
-
-                                            </div>
-                                               <div class="col-sm-10">
+     
+                                      
+                                         <div class="col-sm-10">
 
                                                       
                                                         <div class="form-group">
-                                                            <label for="name"> Hình ảnh    </label>
-      {!! Form::file('pictureother',['class'=>' form-control is-invalid','accept'=>'image/*','id'=>'picture3']) !!}
+                                                            <label for="name"> Picture   </label>
+      {!! Form::file('picture_4',['class'=>'load_banner form-control','accept'=>'image/*','id'=>'banner_name']) !!}
                                                         
 
-                                                    @if(!empty($error['picture3']))
-                                                    <div class="invalid-feedback">
-                                                        {{@$error['picture3']}}
-                                                    </div>
-                                                    @endif
+                                                  
                                                       <span style="color:red">*</span>
-                                                <div class="detail_picture">
-                                                     <img src="/<?=PUBLIC_URL?>upload/banner/{{@$data['picture3']}}" />
+                                                <div class="detail_banner">
+                                                    
                                                 </div>
                                                         </div>
                                                        
@@ -194,40 +238,86 @@
                                                     </div>
                                                     
 
+                                        
+
+                                            <div class="col-sm-10">
+
+                                                <div class="form-group">
+                                                  <label for="name"> Content </label>
+
+
+                                                
+
+                                                   {!!Form::textarea('content_4',@$data_4['value'],['class'=>'form-control','id'=>'contents_4'])!!}
+
+                                                
+                                                </div>
+
+                                            </div>
+
                                         </div>
+
+
                                        
                                     </div>
                                 </div>
 
+
+
+
+
+
+
+
+
+
                
                             </div>
 
+                            
+                              <?php echo \SEO\Seo::form($page); ?>
                              <div class="col-sm-12">
                                         <div class="card">
                                             
-                                            <div class="card-body">
-                                              
-                                               
-                                            </div>
+                                         
                                             <div class="card-footer">
-                                                <input type='hidden' name='_token' value='{{ csrf_token()}}' />
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save </button>
-                                          
+                                               
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save  </button>
+                                              
                                             </div>
                                         </div>
 
                
                             </div>
-                    {!!Form::close()!!}
+                    {!! Form::close() !!}
 
              </div>
     @endsection
-    @section("script_js")
+    @section('script_js') 
+
+         <script type="module"> 
+            @if(count($errors)>0)
+                
+                        @foreach($errors->all() as $error)
+                            window.toastr.error("{{$error}}");
+                        @endforeach
+                    
+            @endif
+            @if(!empty(session('success')))
+                window.toastr.success("{{session('success')}}");
+            @endif
+            </script>
         <script type="text/javascript">
-             document.getElementById('picture1').addEventListener('change', handleFileSelectBanner, false);
-             document.getElementById('picture3').addEventListener('change', handleFileSelect, false);
-            initEditor("description1");
-            initEditor("description2");
-            initEditor("description3");
+           // document.getElementById('picture_name').addEventListener('change', handleFileSelect, false);
+           // document.getElementById('banner_name').addEventListener('change', handleFileSelectBanner, false);
+            initEditorSmall('contents_1');
+            initEditorSmall('contents_2');
+
+            initEditorSmall('contents_3');
+            initEditorSmall('contents_4');
+            
+          //  document.getElementById('galaxy_name').addEventListener('change', handleFileSelectMulti, false);
         </script>
-    @endsection 
+
+        
+    @endsection

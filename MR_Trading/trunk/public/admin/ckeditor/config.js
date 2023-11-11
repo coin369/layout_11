@@ -25,7 +25,15 @@ CKEDITOR.editorConfig = function( config ) {
 	//config.extraPlugins = 'jsplus_image_editor';
 
 	//config.extraPlugins = 'some_other_plugin,one_more_plugin,jsplus_image_editor';
+	config.contentsCss = ["/build/assets/app-3bead6e2.css","/frontend/css/app.css"];
 
 };
 
 
+
+	// CKEDITOR.plugins.add( el , {
+	//     init: function( editor ) {
+	//         var pluginDirectory = this.path;
+	//         editor.addContentsCss(  'http://vangdecor.local/build/assets/app-6b9d856c.css' );
+	//     }
+	// } );
