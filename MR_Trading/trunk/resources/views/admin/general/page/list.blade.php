@@ -40,19 +40,16 @@
                                             <tr>
                                                 <td><?php echo $list['id'];?></td>
                                                 <td>
-                                                     <a href='{{route("page",["alias"=>$list["alias"]])}}' target='_black'>
-                                                        <?php echo $list['name'];?>
-                                                    </a>
-                                                            
-
-                                                        </td>
+                                                      <?php echo $list['name'];?>
+                                                </td>
                                                 
                                                 
                                                 <td>
                                                     <a class="btn btn-sm btn-success" href='/admin/page/edit/<?php echo $list['id'];?>'><i class="fa fa-edit"></i>  </a>
-                                                  
-                                                      <a class="btn btn-sm btn-danger click_remove" href='/admin/page/remove?id=<?php echo $list['id'];?>&_token={{ csrf_token() }}'> <i class="fa fa-remove"></i>   </a>
                                                     
+                                                    @if($list['status']=='2')
+                                                      <a class="btn btn-sm btn-danger click_remove" href='/admin/page/remove?id=<?php echo $list['id'];?>&_token={{ csrf_token() }}'> <i class="fa fa-remove"></i>   </a>
+                                                    @endif
                                                 </td>
 
                                             </tr>

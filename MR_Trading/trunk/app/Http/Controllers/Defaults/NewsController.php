@@ -7,8 +7,9 @@ use App\Http\Controllers\Controller;
 
 use App\Models\News as DTNews;
 use App\Models\News_Cate as DTNewsCate;
-
+use App\Models\Slideshow as DTSlideshow;
 use App\Models\Tag as DTTag;
+
 use Cache;
 //use Share;
 use URL;
@@ -20,7 +21,7 @@ class NewsController extends AppController
         parent::__construct($request);
        
          $this->View['alias_cate']="";
-     
+        $this->View['TSlide']=DTSlideshow::where("cid_main","2")->where('status','1')->orderBy("position","ASC")->get();
           $this->View['TCate']=DTNewsCate::where("status","1")->orderBy("orderby","ASC")->get();
 
 

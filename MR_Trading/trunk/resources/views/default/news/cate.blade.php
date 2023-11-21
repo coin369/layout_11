@@ -22,9 +22,9 @@
                         <section id="content" class="wow bounceInDown infox infox_2" data-wow-duration="1s" data-wow-delay="1s">
                             <section class="pageTitle">
                                 <div class="pageTitleIn">
-                                    <h2>INFORMATION
+                                    <div class="h2">INFORMATION
                                         <div class="span">お知らせ</div>
-                                    </h2>
+                                    </div>
                                 </div>
                             </section>
                             <div id="mainContents">

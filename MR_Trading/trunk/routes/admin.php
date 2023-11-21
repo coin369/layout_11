@@ -143,9 +143,9 @@ Route::group(['namespace'=>"App\Http\Controllers\Auth",'middleware'=>"web"],func
 	Route::post("/login",['as'=>'postlogin','uses'=>"LoginController@postlogin"]);
 });
 
-Route::group(['middleware'=>"web"],function(){
-		Route::get('/logout', 'Admin\General\UserController@logout');
-		Route::get('/thoat', 'Admin\General\UserController@logout');
+Route::group(['namespace'=>"App\Http\Controllers\Admin\General",'middleware'=>"web"],function(){
+		Route::get('/logout', 'UserController@logout');
+		Route::get('/thoat', 'UserController@logout');
 	
 });
 

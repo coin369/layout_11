@@ -1,6 +1,6 @@
 
 <?php $list_news= \App\Models\News::where("status",1)->orderBy("updated_at","DESC")->limit(4)->get()?>
- <section id="content1" class="wow bounceInDown infox" data-wow-duration="1s" data-wow-delay="1s">
+ <section id="content" class="wow bounceInDown infox" data-wow-duration="1s" data-wow-delay="1s">
                 <section class="pageTitle">
                     <div class="pageTitleIn">
                         <div class="h2">INFORMATION
@@ -23,3 +23,6 @@
                 </a>
             </div>
 
+<style>
+    .wp-block-group__inner-container > #content:after{display:none;}
+</style>

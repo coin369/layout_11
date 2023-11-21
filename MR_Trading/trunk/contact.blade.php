@@ -6,26 +6,43 @@
             <section class="pos_top">
                 @include("default.element.slideshow")
                 <div class="main-visual-sweets__text">
-                    <h1 class="main-visual-sweets__title">{{$page['name']}}<span>CONTACT</span></h1>
+                    <h1 class="main-visual-sweets__title">お問い合わせ<span>CONTACT</span></h1>
                 </div>
             </section>
             <div id="breadcrumbList">
                 <ul>
                     <li><a href="/" title="#">ホーム</a></li>
-                    <li>{{$page['name']}}</li>
+                    <li>お問い合わせ</li>
                 </ul>
             </div>
             <div id="myform" class="main-contents">
-               
-                {!!$page['content']!!}
+                <div id="informationWrap">
+                    <div class="info">
+                        <h2><img src="/frontend/img/h2_information.png" width="152" height="53" alt="INFORMATION お知らせ"></h2>
+                        <div id="feed" class="scroll_pane mCustomScrollbar _mCS_1 mCS_no_scrollbar">
+                            <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
+                                <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                    <dl>
+                                        <dd>
+                                            <strong>M&R TRADING</strong> へのお問い合わせは、お電話または下部のメールフォームよりお寄せください。 お送りいただく個人情報の取扱に関しましては、プライバシーポリシーをご覧ください。<br/>
 
+                                            <img src="/frontend/img/tel_header_sub2.png" alt="0473-69-7071" class="is-top is-hotline"><strong class="size_big">0473-69-7071</strong>受付時間：平日9:00～18:00
+
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="main" class="main-contents__inner">
                     <article class="main-article">
                         <section class="pageTitle">
                             <div class="pageTitleIn">
-                                <div class="h2">Contact Us
+                                <h2>Contact Us
                                     <div class="span">お気軽にお問い合わせください</div>
-                                </div>
+                                </h2>
                             </div>
                         </section>
                         <section id="content">

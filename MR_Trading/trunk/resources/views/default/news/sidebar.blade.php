@@ -5,14 +5,14 @@
                                     </li>
 
                                 </ul>
-                                <ul class="tabControl">
+                                <div class="tabControl">
                                     @foreach($TCate as $cate)
-                                    <li class="">
+                                    <div class="">
                                         <a href="{{route('news.cate',['alias'=>$cate['alias']])}}" class="{{$alias_cate==$cate['alias']?'current':''}}"  >
                                                 {{$cate['name']}}
                                         </a>
-                                    </li>
+                                    </div>
                                     @endforeach
-                                </ul>
+                                </div>
 
                             </div>

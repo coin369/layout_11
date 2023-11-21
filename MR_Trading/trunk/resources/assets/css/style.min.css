@@ -1957,3 +1957,17 @@ img {
 #sideContents .tabControl div {
     width: 100%;
 }
+
+
+#sideContents .tabControl {
+    display: block;
+    width: 88%;
+}
+
+#sideContents .tabControl li a {
+    width: 100%;
+}
+
+#sideContents .tabControl li {
+    width: 100%;
+}

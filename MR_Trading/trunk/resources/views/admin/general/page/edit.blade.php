@@ -15,7 +15,7 @@
 
 
 
-        <div class="container-fluid">
+        <div class="">
                     
            {!! Form::open(['method'=>'post','files'=>true]) !!}
                
@@ -25,11 +25,11 @@
                                         <strong> Page    </strong>
                                         <small>Form</small>
                                     </div>
-                                    <div class="card-body">
+                                     <div class="card-body p-1" >
                                         <div class="row">
 
                                            
-                                            <div class="col-sm-10">
+                                            <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label for="name">Page   <span style="color:red">*</span>  </label>
  {!! Form::text('name',@$data['name'],['class'=>!empty($error['name'])? "form-control  is-invalid":"form-control ", "placeholder"=>"Input..."  ]) !!}
@@ -42,7 +42,7 @@
                                             
                                      
 
-                                              <div class="col-sm-10">
+                                              <div class="col-sm-12">
 
                                                 <div class="form-group">
                                                   <label for="name"> Content    <span style="color:red">*</span> </label>
@@ -94,6 +94,6 @@
             @endif
             </script>
         <script type="text/javascript">
-            initEditor("contents")
+            initEditorBig("contents")
         </script>
     @endsection

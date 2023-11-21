@@ -86,18 +86,18 @@ class AppController extends Controller
 
     
       
-      $check_seo= Cache::remember("App_path_".md5(url()->full()),1000,function(){
-            $a=  SEOPAGE::where("path",url()->full())->first();
-            if(empty($a)){
-                return 1;
-            }else{
-                return 2;
-            }
-      });
-      if($check_seo==2){
+      // $check_seo= Cache::remember("App_path_".md5(url()->full()),1000,function(){
+      //       $a=  SEOPAGE::where("path",url()->full())->first();
+      //       if(empty($a)){
+      //           return 1;
+      //       }else{
+      //           return 2;
+      //       }
+      // });
+      // if($check_seo==2){
 
-           $this->View['is_seo']=true;
-      }
+      //      $this->View['is_seo']=true;
+      // }
 
 
      

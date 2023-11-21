@@ -18,6 +18,7 @@
                
            {!! Form::open(['method'=>'post','files'=>true]) !!}
                   
+                  
             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">

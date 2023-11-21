@@ -91,6 +91,11 @@ class PageController extends AppController
             return redirect("/contact#myform");
         }
          $this->View['action_menu']=5;
+
+          $this->View['page']=DTPage::where("status",1)->first();
+
+      $this->View['TSlide']=DTSlideshow::where("cid_main","2")->where('status','1')->orderBy("position","ASC")->get();
+            
     	return view("default.page.contact",$this->View);
     }
 
