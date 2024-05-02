@@ -1,0 +1,5 @@
+docker-compose build nginx phpmyadmin workspace
+docker-compose up -d nginx phpmyadmin workspace
+//update compose
+docker-compose exec workspace bash
+composer update
